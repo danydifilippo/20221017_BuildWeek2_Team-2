@@ -1,45 +1,51 @@
-// async function showApi() {
-//     let musiclink = await fetch ('https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin');
-//     let responseText = await musiclink.json();
-//     console.log(responseText);
-//     let music = responseText.data;
-//     console.log(music);
-    
-//     for (let i=0; i<music.length; i++){
-//         let showcard = document.getElementById('cards')
-//         let scheda = document.createElement('div');
-//         scheda.classList.add('card', 'bg-transparent', 'border-0')
-//         scheda.innerHTML += `<img src="${music[i].album.cover_medium}" class="card-img-top rounded-circle" alt="cover album Maneskin">
-//         <div class="card-body"><h5 class="card-title bg-white bg-opacity-25 rounded-pill ">${music[i].title}</h5>
-//         <audio controls style="width: 180px;"><source src="${music[i].preview}" type="audio/ogg"></audio>
-//         <a href="${music[i].artist.link}" class="btn btn-primary">Go to link</a>`
-//         showcard.appendChild(scheda);
-//     }
-    
- 
-//     const searchBar = document.getElementById('searchBar');
- 
-//     console.log(searchBar);
-//     searchBar.addEventListener('keyup',(e) =>{
-//         const searchString = e.target.value;
-//         const filteredSongs = music.filter( song =>{
-//         return song.title.toLowerCase().includes(searchString.toLowerCase())
-//     });
-//     console.log(filteredSongs)
-//     let showcard = document.getElementById('cards')
-//     showcard.innerHTML=''
-//     for (let i=0; i<filteredSongs.length; i++){
-//         let scheda = document.createElement('div');
-//         scheda.classList.add('card', 'bg-transparent', 'border-0')
-//         scheda.innerHTML += `<img src="${filteredSongs[i].album.cover_medium}" class="card-img-top rounded-circle" alt="cover album Maneskin">
-//         <div class="card-body"><h5 class="card-title bg-white bg-opacity-25 rounded-pill ">${filteredSongs[i].title}</h5>
-//         <audio controls style="width: 180px;"><source src="${filteredSongs[i].preview}" type="audio/ogg"></audio>
-//         <a href="${filteredSongs[i].artist.link}" class="btn btn-primary">Go to link</a>`
-//         showcard.appendChild(scheda);
-//     }
-// })
+let artist = ["maneskin", "gemitaiz"];
 
-// }
+const searchBar = document.getElementById("search-value");
 
+async function showApi() {
+	let musiclink = await fetch(
+		`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artist[0]}`
+	);
+	let responseText = await musiclink.json();
 
-// showApi()
+	let music = responseText.data;
+}
+
+function selectedArtist(e) {
+	const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${artist[0]}`;
+	const urlObj = new URL(url).searchParams;
+	const valueOfInput = searchBar.value;
+	console.log(valueOfInput);
+
+	const q = urlObj.get("q");
+	console.log(q);
+
+	urlObj.set("q", valueOfInput);
+
+	console.log(urlObj.toString());
+
+	let newParams = urlObj.toString();
+	let newUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?${newParams}`;
+	console.log(newUrl);
+
+	getAlbum(newUrl);
+}
+
+async function getAlbum(urlAlbum) {
+	let albumOfArtist = await fetch(urlAlbum);
+	let albumOfArtistJSON = await albumOfArtist.json();
+	console.log(albumOfArtistJSON.data);
+
+	let arrAlbum = albumOfArtistJSON.data;
+	let boxImgCover = document.getElementById("box-cover-md");
+
+	for (let i = 0; i < arrAlbum.length; i++) {
+		let imgCard = `<img src=${arrAlbum[i].album.cover_medium} alt="images of album">
+        <p>${arrAlbum[i].album.title}</p>`;
+
+		console.log(arrAlbum[i].album.cover_medium);
+		boxImgCover.innerHTML += imgCard;
+	}
+}
+
+showApi();
