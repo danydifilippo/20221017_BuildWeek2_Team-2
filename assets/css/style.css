@@ -10804,3 +10804,28 @@ body {
   width: 60px;
   border-radius: 50%;
 }
+#main #player-spotify {
+  background-color: #191414;
+  padding: 2rem 2rem;
+  color: white;
+}
+#main #cover-player {
+  height: 70px;
+  width: 65px;
+}
+#main #heart-player {
+  display: flex;
+  align-items: center;
+}
+#main #sub-test_player {
+  color: grey;
+}
+#main #controls_player {
+  font-size: 2rem;
+}
+#main #filled-bar {
+  display: flex;
+}
+#main #player_right-side i {
+  margin-right: 2rem;
+}
