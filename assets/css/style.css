@@ -10771,3 +10771,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  width: 100%;
+  font-size: 0.5rem;
+}
+
+h3, .h3 {
+  font-size: 1rem;
+}
