@@ -1,14 +1,41 @@
-let artist = ["maneskin", "gemitaiz"];
+let artist = [
+	"maneskin",
+	"gemitaiz",
+	"night skinny",
+	"lazza",
+	"lizzo",
+	"salmo",
+	"twenty one pilots",
+	"madonna",
+];
 
 const searchBar = document.getElementById("search-value");
 
 async function showApi() {
 	let musiclink = await fetch(
-		`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artist[0]}`
+		`https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin`
 	);
 	let responseText = await musiclink.json();
 
 	let music = responseText.data;
+
+	console.log(music);
+
+	//    <div id="main-album">
+	// 		<p>Album</p>
+	// 		<div id="box-cover-md">
+	// 			<div id="box-text"></div>
+	// 		</div>
+	// 	</div>;
+	let coverImg = document.getElementById("box-cover-md");
+	let textCard = document.getElementById("box-text");
+	console.log(textCard);
+
+	for (let i = 0; i < 1; i++) {
+		coverImg.innerHTML = `<img src=${music[i].album.cover_medium} alt="kk">`;
+		console.log(music[i].album.title);
+		textCard.innerHTML = `<p>${music[i].title}</p>`;
+	}
 }
 
 function selectedArtist(e) {
