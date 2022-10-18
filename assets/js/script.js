@@ -19,15 +19,38 @@ async function showApi(n) {
   }
   card();
 
-  // for (let i=0; i<music.length; i++){
-  //     let showcard = document.getElementById('cards')
-  //     showcard.innerHTML += `<div class="card bg-transparent border-0">
-  //     <img src="${music[i].album.cover_medium}" class="card-img-top rounded-circle" alt="cover album Maneskin">
-  //     <div class="card-body">
-  //     <h5 class="card-title bg-white bg-opacity-25 rounded-pill ">${music[i].title}</h5>
-  //     <audio controls style="width: 180px;"><source src="${music[i].preview}" type="audio/ogg"></audio>
-  //     <a href="${music[i].artist.link}" class="btn btn-primary">Go to link</a></div>`
-  // }
+  function albums() {
+    let showAlbum = document.getElementById("albums");
+    showAlbum.innerHTML += `<div class="card border-0 bg-dark">
+        <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
+        <audio id="player-album">
+        <source src="${music[2].preview}" type='audio/mpeg'>
+        </audio>
+        <button class="btn_audio-preview" onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+        <div class="card-body">
+        <h5 class="card-title text-white">${music[2].album.title}</h5>
+        <p>${music[2].artist.name}</p>
+        </div>`;
+  }
+  albums();
+}
+
+let play = false;
+
+function togglePlay() {
+  let audioElement = document.getElementById("player-album");
+
+  console.log(play);
+
+  play ? pauseCard() : playCard();
+
+  function playCard() {
+    audioElement.play();
+
+    play = true;
+
+    console.log("funzione playCard", play);
+  }
 }
 
 const searchBar = document.getElementById("searchBar");
