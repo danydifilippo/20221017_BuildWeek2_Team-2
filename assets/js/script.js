@@ -26,7 +26,7 @@ async function showApi(n) {
         <audio id="player-album">
         <source src="${music[2].preview}" type='audio/mpeg'>
         </audio>
-        <button class="btn_audio-preview" onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+        <button class="btn_audio-preview preview" onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
         <div class="card-body">
         <h5 class="card-title text-white">${music[2].album.title}</h5>
         <p>${music[2].artist.name}</p>

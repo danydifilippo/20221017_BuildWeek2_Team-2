@@ -108,8 +108,22 @@ body {
 }
 .resultCard {
 	width: 18% !important;
-	height: fit-content;
 	
+	
+}
+.preview {
+	color: green;
+	background: transparent;
+	border: none;
+	position: absolute;
+	bottom: 120px;
+	right: 15px;
+	width: 60px;
+	height: 64px;
+	
+	i {
+		font-size: 4rem;
+	}
 }
 h3 {
 	font-size: 1rem;
