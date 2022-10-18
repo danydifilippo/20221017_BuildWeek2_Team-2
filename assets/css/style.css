@@ -10811,7 +10811,8 @@ body {
 }
 #main #cover-player {
   height: 70px;
-  width: 65px;
+  width: 70px;
+  border-radius: 3px;
 }
 #main #heart-player {
   display: flex;
@@ -10825,6 +10826,12 @@ body {
 }
 #main #filled-bar {
   display: flex;
+}
+#main #filled-bar #container_filler-bar {
+  height: 18px;
+  width: 70%;
+  border-radius: 2px;
+  background-color: grey;
 }
 #main #player_right-side i {
   margin-right: 2rem;
