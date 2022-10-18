@@ -10804,3 +10804,27 @@ body {
   width: 60px;
   border-radius: 50%;
 }
+
+#artistFolder h3, #artistFolder .h3 {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+#artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#artists .card {
+  width: 160px;
+  background-color: #1c1c1c;
+  padding: 10px;
+  margin: 10px;
+}
+#artists .card h5, #artists .card .h5 {
+  font-size: 12px;
+}
+#artists .card p {
+  font-size: 4px;
+  color: rgb(159, 159, 159);
+}

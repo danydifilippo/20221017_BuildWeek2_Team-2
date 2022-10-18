@@ -5,15 +5,14 @@
         let music = responseText.data;
         console.log(music);
 
-        for (i=0;i<arrayArtists.length;i++){
-            music.name="`${arrayArtists[i]`"
-        }
+
         function card() {
             let showcard = document.getElementById('artists')
-            showcard.innerHTML += `<div class="card bg-transparent border-0">
+            showcard.innerHTML += `<div class="card border-0">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
             <div class="card-body">
-            <h5 class="card-title bg-white bg-opacity-25 rounded-pill ">${music[0].artist.name}</h5>
+            <h5 class="card-title text-white">${music[0].artist.name}</h5>
+            <p>Artists</p>
             </div>`
         };
         card()
