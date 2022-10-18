@@ -7,11 +7,13 @@ async function showApi(n) {
   function card() {
     let showcard = document.getElementById("artists");
     showcard.innerHTML += `<div  class="card border-0 resultCard">
+            <div class="position-relative">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
-             <audio id='player-album'>
+            <audio id='player-album'>
             <source src="${music[2].preview}" type='audio/mpeg'>
             </audio>
-            <button class='btn_audio-preview' onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
+            </div>
             <div class="card-body">
             <h5 class="card-title text-white">${music[0].artist.name}</h5>
             <h6>Artists</h6>
@@ -23,11 +25,11 @@ async function showApi(n) {
     let showAlbum = document.getElementById("albums");
     showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
-          <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
-          <audio id="player-album">
-            <source src="${music[2].preview}" type='audio/mpeg'>
-          </audio>
-          <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
+        <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
+        <audio id="player-album">
+        <source src="${music[2].preview}" type='audio/mpeg'>
+        </audio>
+        <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
         </div>
         <div class="card-body">
         <h5 class="card-title text-white">${music[2].album.title}</h5>
