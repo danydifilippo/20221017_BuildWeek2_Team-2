@@ -1,0 +1,7 @@
+@mixin trackSelectedHeart($theme) {
+	@if ($theme) {
+		background-color: transparent;
+		color: grey;
+	} @else {
+	}
+}
