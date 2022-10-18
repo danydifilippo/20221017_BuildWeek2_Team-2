@@ -10845,7 +10845,8 @@ body {
   padding-left: 20px;
 }
 
-#artists {
+#artists,
+#albums {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -10853,18 +10854,33 @@ body {
   overflow-y: scroll;
   height: 100vh;
 }
-#artists .card {
+#artists .card,
+#albums .card {
   width: 160px;
   background-color: #1c1c1c;
   padding: 10px;
   margin: 10px;
 }
-#artists .card h6, #artists .card .h6 {
+#artists .card h6, #artists .card .h6,
+#albums .card h6,
+#albums .card .h6 {
   color: #a6a6a6;
 }
-#artists .card p {
-  font-size: 4px;
+#artists .card p,
+#albums .card p {
+  font-size: 0.8rem;
   color: rgb(159, 159, 159);
+}
+#artists .btn_audio-preview,
+#albums .btn_audio-preview {
+  display: inline-flex;
+}
+
+#albums img {
+  border-radius: 4px;
+  overflow: hidden;
+  width: 98%;
+  margin: 0 auto;
 }
 
 #resultCard {

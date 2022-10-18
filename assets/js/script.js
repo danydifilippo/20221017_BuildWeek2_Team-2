@@ -8,6 +8,10 @@ async function showApi(n) {
     let showcard = document.getElementById("artists");
     showcard.innerHTML += `<div id="resultCard" class="card border-0">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
+             <audio id='player-album'>
+            <source src="${music[2].preview}" type='audio/mpeg'>
+            </audio>
+            <button class='btn_audio-preview' onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
             <div class="card-body">
             <h5 class="card-title text-white">${music[0].artist.name}</h5>
             <h6>Artists</h6>

@@ -71,7 +71,8 @@ body {
 	padding-top: 30px;
 	padding-left: 20px;
 }
-#artists {
+#artists,
+#albums {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: start;
@@ -87,10 +88,23 @@ body {
 			color: #a6a6a6	
 		}
 		p {
-			font-size: 4px;
+			font-size: 0.8rem;
 			color: rgb(159, 159, 159);
 		}
 	}
+
+	.btn_audio-preview {
+		// border-radius: 100%;
+		// background-color: green;
+		display: inline-flex;
+	}
+}
+
+#albums img {
+	border-radius: 4px;
+	overflow: hidden;
+	width: 98%;
+	margin: 0 auto;
 }
 #resultCard {
 	width: 18% !important;
