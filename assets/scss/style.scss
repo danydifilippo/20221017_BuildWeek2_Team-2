@@ -20,7 +20,8 @@ body {
 	padding-top: 30px;
 	padding-left: 20px;
 }
-#artists {
+#artists,
+#albums {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -29,14 +30,28 @@ body {
 		background-color: #1c1c1c;
 		padding: 10px;
 		margin: 10px;
+		text-align: left;
 		h5 {
-			font-size: 12px;
+			font-size: 1.2rem;
 		}
 		p {
-			font-size: 4px;
+			font-size: 0.8rem;
 			color: rgb(159, 159, 159);
 		}
 	}
+
+	.btn_audio-preview {
+		// border-radius: 100%;
+		// background-color: green;
+		display: inline-flex;
+	}
+}
+
+#albums img {
+	border-radius: 4px;
+	overflow: hidden;
+	width: 98%;
+	margin: 0 auto;
 }
 h3 {
 	font-size: 1rem;

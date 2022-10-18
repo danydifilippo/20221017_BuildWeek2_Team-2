@@ -10794,23 +10794,40 @@ body {
   padding-left: 20px;
 }
 
-#artists {
+#artists,
+#albums {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#artists .card {
+#artists .card,
+#albums .card {
   width: 160px;
   background-color: #1c1c1c;
   padding: 10px;
   margin: 10px;
+  text-align: left;
 }
-#artists .card h5, #artists .card .h5 {
-  font-size: 12px;
+#artists .card h5, #artists .card .h5,
+#albums .card h5,
+#albums .card .h5 {
+  font-size: 1.2rem;
 }
-#artists .card p {
-  font-size: 4px;
+#artists .card p,
+#albums .card p {
+  font-size: 0.8rem;
   color: rgb(159, 159, 159);
+}
+#artists .btn_audio-preview,
+#albums .btn_audio-preview {
+  display: inline-flex;
+}
+
+#albums img {
+  border-radius: 4px;
+  overflow: hidden;
+  width: 98%;
+  margin: 0 auto;
 }
 
 h3, .h3 {
