@@ -10,6 +10,7 @@
             let showcard = document.getElementById('artists')
             showcard.innerHTML += `<div class="card border-0">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
+            <button id="${music[2].preview} onclick="playCard(this.id), pauseCard()"></button>
             <div class="card-body">
             <h5 class="card-title text-white">${music[0].artist.name}</h5>
             <p>Artists</p>
@@ -17,8 +18,36 @@
         };
         card()
 
+        function albums() {
+            let showAlbum = document.getElementById('albums')
+            showAlbum.innerHTML += `<div class="card border-0 bg-dark">
+            <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
+            <button id="${music[2].preview}" onclick="togglePlay(this.id)"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+            <div class="card-body">
+            <h5 class="card-title text-white">${music[2].album.title}</h5>
+            <p>${music[2].artist.name}</p>
+            </div>`
+        };
+        albums()
+        }
+        
+        let play = false;
+        
+        function togglePlay(audio){
+        let sound = new Audio(audio)
+        play ? pauseCard() : playCard();
+         function playCard(){
+            sound.play();
+            play=true;
+        }
+        function pauseCard(){
+            sound.pause();
+            play=false;
+        }
+    }
+    
 
-
+        
         // for (let i=0; i<music.length; i++){
         //     let showcard = document.getElementById('cards')
         //     showcard.innerHTML += `<div class="card bg-transparent border-0">
@@ -28,7 +57,7 @@
         //     <audio controls style="width: 180px;"><source src="${music[i].preview}" type="audio/ogg"></audio>
         //     <a href="${music[i].artist.link}" class="btn btn-primary">Go to link</a></div>`
         // }
-    }
+    
 
 
     const searchBar = document.getElementById('searchBar');
