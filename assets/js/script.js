@@ -22,11 +22,13 @@ async function showApi(n) {
   function albums() {
     let showAlbum = document.getElementById("albums");
     showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
-        <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
-        <audio id="player-album">
-        <source src="${music[2].preview}" type='audio/mpeg'>
-        </audio>
-        <button class="btn_audio-preview preview" onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+        <div class="position-relative">
+          <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
+          <audio id="player-album">
+            <source src="${music[2].preview}" type='audio/mpeg'>
+          </audio>
+          <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
+        </div>
         <div class="card-body">
         <h5 class="card-title text-white">${music[2].album.title}</h5>
         <p>${music[2].artist.name}</p>

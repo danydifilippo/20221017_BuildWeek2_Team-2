@@ -10888,17 +10888,8 @@ body {
 }
 
 .preview {
-  color: green;
-  background: transparent;
-  border: none;
-  position: absolute;
-  bottom: 120px;
-  right: 15px;
-  width: 60px;
-  height: 64px;
-}
-.preview i {
-  font-size: 4rem;
+  bottom: 3px;
+  right: 13px;
 }
 
 h3, .h3 {
