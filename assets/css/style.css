@@ -10853,7 +10853,7 @@ body {
   flex-wrap: wrap;
   justify-content: start;
   align-content: flex-start;
-  height: 100vh;
+  height: fit-content;
 }
 #artists .card,
 #albums .card {
