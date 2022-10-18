@@ -26,13 +26,36 @@ async function showApi(n) {
         <audio id="player-album">
         <source src="${music[2].preview}" type='audio/mpeg'>
         </audio>
-        <button id="${music[2].preview}" class="btn_audio-preview" onclick="togglePlay(this.id)"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+        <button id="${music[2].preview}" class="btn_audio-preview" onclick="playAudio(this.id)"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
+		<button id="${music[2].preview}" class="btn_audio-preview" onclick="pauseAudio(this.id)"><i class="bi bi-pause-circle"></i></button>
         <div class="card-body">
         <h5 class="card-title text-white">${music[2].album.title}</h5>
         <p>${music[2].artist.name}</p>
         </div>`;
 	}
 	albums();
+}
+
+function playAudio(linkAudio) {
+	let newAudio = new Audio(linkAudio);
+	// audioElement.play();
+
+	console.log(newAudio);
+	newAudio.play();
+
+	play = true;
+
+	console.log("funzione playCard", play);
+}
+function pauseAudio() {
+	// audioElement.pause();
+	let newAudio = new Audio(linkAudio);
+
+	pause();
+
+	play = false;
+
+	console.log("funzione pauseCard", play);
 }
 
 let play = false;
