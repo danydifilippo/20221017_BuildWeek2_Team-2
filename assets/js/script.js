@@ -6,7 +6,7 @@ async function showApi(n) {
 
   function card() {
     let showcard = document.getElementById("artists");
-    showcard.innerHTML += `<div id="resultCard" class="card border-0">
+    showcard.innerHTML += `<div  class="card border-0 resultCard">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
              <audio id='player-album'>
             <source src="${music[2].preview}" type='audio/mpeg'>
@@ -21,7 +21,7 @@ async function showApi(n) {
 
   function albums() {
     let showAlbum = document.getElementById("albums");
-    showAlbum.innerHTML += `<div class="card border-0 bg-dark">
+    showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
         <audio id="player-album">
         <source src="${music[2].preview}" type='audio/mpeg'>
@@ -50,6 +50,13 @@ function togglePlay() {
     play = true;
 
     console.log("funzione playCard", play);
+  }
+  function pauseCard() {
+    audioElement.pause();
+
+    play = false;
+
+    console.log("funzione pauseCard", play);
   }
 }
 

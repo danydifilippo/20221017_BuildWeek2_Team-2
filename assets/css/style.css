@@ -10883,7 +10883,7 @@ body {
   margin: 0 auto;
 }
 
-#resultCard {
+.resultCard {
   width: 18% !important;
   height: fit-content;
 }
