@@ -10788,22 +10788,6 @@ body {
   width: 100%;
   margin: 3vh 0 3vh 0;
 }
-#main h3, #main .h3 {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-#main p {
-  margin: 0;
-  padding-block: 0.15rem;
-  font-size: 0.8rem;
-}
-#main .track {
-  height: fit-content;
-}
-#main .friends {
-  width: 60px;
-  border-radius: 50%;
-}
 
 #artistFolder h3, #artistFolder .h3 {
   padding-top: 30px;
@@ -10827,4 +10811,63 @@ body {
 #artists .card p {
   font-size: 4px;
   color: rgb(159, 159, 159);
+}
+
+h3, .h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+  padding-block: 0.15rem;
+  font-size: 0.8rem;
+}
+
+.track {
+  height: fit-content;
+}
+
+.friends {
+  width: 60px;
+  border-radius: 50%;
+}
+
+#player-spotify {
+  background-color: #191414;
+  padding: 2rem 2rem;
+  color: white;
+}
+
+#cover-player {
+  height: 70px;
+  width: 70px;
+  border-radius: 3px;
+}
+
+#heart-player {
+  display: flex;
+  align-items: center;
+}
+
+#sub-test_player {
+  color: grey;
+}
+
+#controls_player {
+  font-size: 2rem;
+}
+
+#filled-bar {
+  display: flex;
+}
+#filled-bar #container_filler-bar {
+  height: 18px;
+  width: 70%;
+  border-radius: 2px;
+  background-color: grey;
+}
+
+#player_right-side i {
+  margin-right: 2rem;
 }

@@ -1,62 +1,98 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss" ;
-
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 body {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
 }
 #main {
-    width: 100%;
-    .Utents {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       width: 100%;
-       margin: 3vh 0 3vh 0;
-    }
-    
-    h3 {
-       font-size: 1rem;
-       margin-bottom: 0;
-   }
-    p {
-       margin: 0;
-       padding-block: 0.15rem;
-       font-size: 0.8rem;
-   }
-    .track {
-       height: fit-content;
-   }
-    .friends {
-       width: 60px;
-       border-radius: 50%;
-   }
-
+	width: 100%;
+	.Utents {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin: 3vh 0 3vh 0;
+	}
 }
-#artistFolder h3{
-    padding-top: 30px;
-    padding-left: 20px;
-} 
+#artistFolder h3 {
+	padding-top: 30px;
+	padding-left: 20px;
+}
 #artists {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .card {
-        width: 160px;
-        background-color: #1c1c1c;
-        padding: 10px;
-        margin: 10px;
-        h5{
-            font-size: 12px;
-        }
-        p{
-            font-size: 4px;
-            color: rgb(159, 159, 159);
-        }
-
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.card {
+		width: 160px;
+		background-color: #1c1c1c;
+		padding: 10px;
+		margin: 10px;
+		h5 {
+			font-size: 12px;
+		}
+		p {
+			font-size: 4px;
+			color: rgb(159, 159, 159);
+		}
+	}
+}
+h3 {
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+p {
+	margin: 0;
+	padding-block: 0.15rem;
+	font-size: 0.8rem;
+}
+.track {
+	height: fit-content;
+}
+.friends {
+	width: 60px;
+	border-radius: 50%;
 }
 
+// PLAYER SPOTIFY
+
+#player-spotify {
+	background-color: #191414;
+	padding: 2rem 2rem;
+	color: white;
+}
+
+#cover-player {
+	height: 70px;
+	width: 70px;
+	border-radius: 3px;
+}
+
+#heart-player {
+	display: flex;
+	align-items: center;
+}
+
+#sub-test_player {
+	color: grey;
+}
+
+#controls_player {
+	font-size: 2rem;
+}
+
+#filled-bar {
+	display: flex;
+
+	#container_filler-bar {
+		height: 18px;
+		width: 70%;
+		border-radius: 2px;
+		background-color: grey;
+	}
+}
+
+#player_right-side i {
+	margin-right: 2rem;
 }
