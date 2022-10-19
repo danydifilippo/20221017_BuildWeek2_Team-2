@@ -10932,6 +10932,10 @@ p {
   width: 100%;
   height: 100px;
 }
+#player-spotify button {
+  background-color: transparent;
+  border: none;
+}
 
 #cover-player {
   height: 70px;
@@ -10948,6 +10952,7 @@ p {
   display: flex;
   align-items: center;
   font-size: 1.3rem;
+  color: white;
 }
 #heart-player .bi-heart-fill {
   color: green;
@@ -10994,6 +10999,31 @@ p {
 
 #player_right-side i {
   margin-right: 2rem;
+}
+
+#btn_play-pause--audio {
+  color: white;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.bi-shuffle,
+.bi-skip-start-fill,
+.bi-skip-end-fill,
+.bi-repeat {
+  color: grey;
+}
+.bi-shuffle:hover,
+.bi-skip-start-fill:hover,
+.bi-skip-end-fill:hover,
+.bi-repeat:hover {
+  color: white;
+}
+
+.btn_colorize-green {
+  color: green;
 }
 
 @keyframes progress-animation {

@@ -131,3 +131,15 @@ function selectedHeart() {
   btnHeart.classList.toggle("d-none");
   btnHeartFill.classList.toggle("d-none");
 }
+
+function selectedPlayPause() {
+	let btnPlay = document.getElementById("btn_play");
+	let btnPause = document.getElementById("btn_pause");
+
+	btnPlay.classList.toggle("d-none");
+	btnPause.classList.toggle("d-none");
+}
+
+function selectedBtnAudioColorizeGreen(event) {
+	console.log(event);
+}
