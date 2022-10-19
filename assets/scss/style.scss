@@ -1,5 +1,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
 	width: 100vw;
 	height: 100vh;
@@ -8,8 +8,7 @@ body {
 	padding: 0;
 	font-size: 1rem;
 	color: white;
-	font-family: 'Montserrat', sans-serif;
-	
+	font-family: "Montserrat", sans-serif;
 }
 #app {
 	height: 100vh;
@@ -18,13 +17,12 @@ body {
 	width: 100%;
 	height: 100vh;
 	overflow-y: hidden;
-    .aside {
+	.aside {
 		width: 17%;
 		p {
-		color: #a6a6a6;
-
+			color: #a6a6a6;
 		}
-	} 
+	}
 	#splashPage {
 		width: 66%;
 		overflow-y: scroll;
@@ -50,8 +48,12 @@ body {
 		}
 	}
 	#like {
-		color: rgb(78, 91, 193) ;
-		color: linear-gradient(90deg, rgba(108,193,226,1) 0%, rgba(57,47,122,1) 100%);
+		color: rgb(78, 91, 193);
+		color: linear-gradient(
+			90deg,
+			rgba(108, 193, 226, 1) 0%,
+			rgba(57, 47, 122, 1) 100%
+		);
 	}
 	hr {
 		width: 100%;
@@ -63,9 +65,8 @@ body {
 		align-items: center;
 		width: 98%;
 		margin: 3vh 0 3vh 0;
-		color: #a6a6a6 ;
+		color: #a6a6a6;
 	}
-	
 }
 #splashPage {
 	height: 100vh;
@@ -87,7 +88,7 @@ body {
 		padding: 10px;
 		margin: 10px;
 		h6 {
-			color: #a6a6a6	
+			color: #a6a6a6;
 		}
 		p {
 			font-size: 0.8rem;
@@ -110,19 +111,14 @@ body {
 }
 .resultCard {
 	width: 18% !important;
-	
-	
 }
 .preview {
 	bottom: 3px;
 	right: 13px;
-	
-	
 }
 h3 {
 	font-size: 1rem;
 	margin-bottom: 0;
-
 }
 p {
 	margin: 0;
@@ -161,11 +157,30 @@ p {
 	height: 70px;
 	width: 70px;
 	border-radius: 3px;
+	margin-right: 15px;
+}
+
+#text-player {
+	margin-right: 15px;
 }
 
 #heart-player {
 	display: flex;
 	align-items: center;
+	font-size: 1.3rem;
+	// color: grey;
+	// color: green;
+
+	.bi-heart-fill {
+		color: green;
+		// color: green;
+		// overflow: hidden;
+	}
+
+	&:hover {
+		color: white;
+		cursor: pointer;
+	}
 }
 
 #sub-test_player {
@@ -178,15 +193,47 @@ p {
 
 #filled-bar {
 	display: flex;
+}
 
-	#container_filler-bar {
-		height: 18px;
-		width: 70%;
-		border-radius: 2px;
-		background-color: grey;
-	}
+#container_filler-bar {
+	display: inline-flex;
+	height: 8px;
+	width: 300px;
+	border-radius: 5px;
+	margin: 0 10px;
+	background-color: grey;
+	position: relative;
+}
+
+#filler_bar-time {
+	position: absolute;
+	height: 100%;
+	background-color: white;
+	// overflow: hidden;
+
+	animation: progress-animation 5s ease-in-out;
+}
+
+#customRange1 {
+	width: 60px;
+	margin-right: 20px;
+	margin-left: -10px !important;
 }
 
 #player_right-side i {
 	margin-right: 2rem;
+}
+
+@keyframes progress-animation {
+	0% {
+		width: 0%;
+	}
+
+	50% {
+		width: 50%;
+	}
+
+	100% {
+		width: 100%;
+	}
 }

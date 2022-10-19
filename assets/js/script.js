@@ -121,3 +121,13 @@ for (let i = 0; i < arrayArtists.length; i++) {
 // }
 
 // showApi()
+
+// PLAYER
+
+function selectedHeart() {
+  let btnHeart = document.getElementById("heart");
+  let btnHeartFill = document.getElementById("heart-fill");
+
+  btnHeart.classList.toggle("d-none");
+  btnHeartFill.classList.toggle("d-none");
+}

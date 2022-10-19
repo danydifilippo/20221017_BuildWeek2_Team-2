@@ -10937,11 +10937,24 @@ p {
   height: 70px;
   width: 70px;
   border-radius: 3px;
+  margin-right: 15px;
+}
+
+#text-player {
+  margin-right: 15px;
 }
 
 #heart-player {
   display: flex;
   align-items: center;
+  font-size: 1.3rem;
+}
+#heart-player .bi-heart-fill {
+  color: green;
+}
+#heart-player:hover {
+  color: white;
+  cursor: pointer;
 }
 
 #sub-test_player {
@@ -10955,13 +10968,42 @@ p {
 #filled-bar {
   display: flex;
 }
-#filled-bar #container_filler-bar {
-  height: 18px;
-  width: 70%;
-  border-radius: 2px;
+
+#container_filler-bar {
+  display: inline-flex;
+  height: 8px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 0 10px;
   background-color: grey;
+  position: relative;
+}
+
+#filler_bar-time {
+  position: absolute;
+  height: 100%;
+  background-color: white;
+  animation: progress-animation 5s ease-in-out;
+}
+
+#customRange1 {
+  width: 60px;
+  margin-right: 20px;
+  margin-left: -10px !important;
 }
 
 #player_right-side i {
   margin-right: 2rem;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
 }
