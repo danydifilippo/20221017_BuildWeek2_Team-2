@@ -10918,6 +10918,7 @@ body {
 
 .resultCard {
   width: 18% !important;
+  min-width: 180px;
 }
 
 .categoriesCard {
