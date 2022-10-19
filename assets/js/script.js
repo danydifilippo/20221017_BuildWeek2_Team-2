@@ -151,7 +151,7 @@ function selectedHeart() {
 
 		const showRemoveTxt = setTimeout(() => {
 			modalPlaceholder.classList.add("d-none");
-		});
+		}, 3000);
 	}
 
 	// CHIEDERE A LIDIA PERCHE FUNZIONA QUESTA MIA LOGICA
