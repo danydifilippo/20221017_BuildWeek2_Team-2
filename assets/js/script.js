@@ -1,12 +1,12 @@
 async function showApi(n) {
-  let musiclink = await fetch(n);
-  let responseText = await musiclink.json();
-  let music = responseText.data;
-  console.log(music);
+	let musiclink = await fetch(n);
+	let responseText = await musiclink.json();
+	let music = responseText.data;
+	console.log(music);
 
-  function card() {
-    let showcard = document.getElementById("artists");
-    showcard.innerHTML += `<div  class="card border-0 resultCard">
+	function card() {
+		let showcard = document.getElementById("artists");
+		showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
             <audio id='player-album'>
@@ -18,12 +18,12 @@ async function showApi(n) {
             <h5 class="card-title text-white">${music[0].artist.name}</h5>
             <h6>Artists</h6>
             </div>`;
-  }
-  card();
+	}
+	card();
 
-  function albums() {
-    let showAlbum = document.getElementById("albums");
-    showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
+	function albums() {
+		let showAlbum = document.getElementById("albums");
+		showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
         <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">  
             <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[2].preview}')">
@@ -32,58 +32,58 @@ async function showApi(n) {
         <h5 class="card-title text-white">${music[2].album.title}</h5>
         <p>${music[2].artist.name}</p>
         </div>`;
-  }
-  albums();
+	}
+	albums();
 
-  // function artistPage() {
-  //   let
-  // }
+	// function artistPage() {
+	//   let
+	// }
 }
 // let a = document.querySelector('.player')
 // console.log(a)
 // let sound = new Audio(a);
 
 function playA(a) {
-  let aux = document.querySelector(".player");
-  aux.src = a;
-  console.log(aux);
+	let aux = document.querySelector(".player");
+	aux.src = a;
+	console.log(aux);
 
-  if (aux.paused || aux.currentTime === 0 || aux.ended) {
-    playCard();
-  } else {
-    pauseCard();
-  }
-  // console.log(aux.paused);
-  function playCard() {
-    aux.play();
-  }
+	if (aux.paused || aux.currentTime === 0 || aux.ended) {
+		playCard();
+	} else {
+		pauseCard();
+	}
+	// console.log(aux.paused);
+	function playCard() {
+		aux.play();
+	}
 
-  function pauseCard() {
-    aux.pause();
-    console.log("ciao");
-  }
+	function pauseCard() {
+		aux.pause();
+		console.log("ciao");
+	}
 }
 
 const searchBar = document.getElementById("searchBar");
 console.log(searchBar);
 const urlBase = "q=radiohead";
 function searchArtist() {
-  let params = new URLSearchParams(urlBase);
-  let query = params.get("q");
-  let input = searchBar.value;
-  console.log(query);
-  params.set("q", input);
-  let data = params.toString();
-  let newUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?${data}`;
-  console.log(newUrl);
-  showApi(newUrl);
+	let params = new URLSearchParams(urlBase);
+	let query = params.get("q");
+	let input = searchBar.value;
+	console.log(query);
+	params.set("q", input);
+	let data = params.toString();
+	let newUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?${data}`;
+	console.log(newUrl);
+	showApi(newUrl);
 }
 
 let arrayArtists = ["Radiohead", "Lazza", "Lizzo", "Maneskin"];
 
 for (let i = 0; i < arrayArtists.length; i++) {
-  let newUrl2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${arrayArtists[i]}`;
-  showApi(newUrl2);
+	let newUrl2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${arrayArtists[i]}`;
+	showApi(newUrl2);
 }
 
 // for (let i=0; i<music.length; i++){
@@ -125,11 +125,11 @@ for (let i = 0; i < arrayArtists.length; i++) {
 // PLAYER
 
 function selectedHeart() {
-  let btnHeart = document.getElementById("heart");
-  let btnHeartFill = document.getElementById("heart-fill");
+	let btnHeart = document.getElementById("heart");
+	let btnHeartFill = document.getElementById("heart-fill");
 
-  btnHeart.classList.toggle("d-none");
-  btnHeartFill.classList.toggle("d-none");
+	btnHeart.classList.toggle("d-none");
+	btnHeartFill.classList.toggle("d-none");
 }
 
 function selectedPlayPause() {
@@ -142,4 +142,15 @@ function selectedPlayPause() {
 
 function selectedBtnAudioColorizeGreen(event) {
 	console.log(event);
+	let btnSelected = event.querySelector(".bi");
+
+	console.log(btnSelected);
+
+	btnSelected.classList.toggle("btn_colorize-green");
+}
+
+function selectedModalControlDevic() {
+	let modalElement = document.getElementById("modal_control-device");
+
+	modalElement.classList.toggle("d-none");
 }

@@ -27,7 +27,6 @@ body {
 		width: 66%;
 		overflow-y: scroll;
 		height: 100vh;
-		
 	}
 	ul {
 		list-style: none;
@@ -134,19 +133,18 @@ p {
 }
 ::-webkit-scrollbar {
 	width: 10px;
-	
-  }
-  ::-webkit-scrollbar-track {
-	background: #000000; 
-  } 
-  ::-webkit-scrollbar-thumb {
-	background: #a6a6a6; 
-  } 
+}
+::-webkit-scrollbar-track {
+	background: #000000;
+}
+::-webkit-scrollbar-thumb {
+	background: #a6a6a6;
+}
 
 // PLAYER SPOTIFY
 
 #player-spotify {
-	background-color: #191414;
+	background-color: #181818;
 	padding: 2rem 2rem;
 	color: white;
 	width: 100%;
@@ -225,7 +223,7 @@ p {
 }
 
 #player_right-side i {
-	margin-right: 2rem;
+	margin-right: 1rem;
 }
 
 #btn_play-pause--audio {
@@ -248,9 +246,87 @@ i:hover {
 }
 
 .btn_colorize-green {
-	color: green;
+	color: green !important;
 }
 
+#player_right-side {
+	position: relative;
+
+	button {
+		color: grey;
+
+		i {
+			font-size: 1.1rem;
+		}
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	#modal_control-device {
+		position: absolute;
+		top: -418px;
+		background-color: #121212;
+		border-radius: 3px;
+		font-size: 0.3rem;
+		padding: 1.5rem;
+		line-height: 1.5;
+		min-width: 350px;
+		right: 16px;
+
+		i {
+			font-size: 1.6rem;
+			color: grey;
+		}
+
+		p {
+			color: grey;
+		}
+
+		h4 {
+			font-size: 0.9rem;
+		}
+	}
+
+	#current_device,
+	#control_wifi,
+	#control_another-device,
+	#control_speaker,
+	#error_device {
+		display: flex !important;
+		justify-content: start;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+
+	#current_device {
+		i,
+		p {
+			color: green;
+		}
+	}
+
+	#modal-sub {
+		display: flex !important;
+		justify-content: space-between;
+		align-items: center;
+		// height: 20px;
+		i {
+			font-size: 1rem;
+		}
+	}
+
+	#square-rotate {
+		height: 40px;
+		width: 30px;
+		background-color: #121212;
+		transform: rotate(45deg);
+		position: absolute;
+		right: 45%;
+		bottom: -10px;
+	}
+}
 @keyframes progress-animation {
 	0% {
 		width: 0%;
