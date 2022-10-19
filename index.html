@@ -160,15 +160,19 @@
             <h4>Forza Roma!</h4>
             <p id="sub-test_player">Lorenzo Pellegrini</p>
           </div>
+
           <button id="heart-player" onclick="selectedHeart()">
             <i class="bi bi-heart d-flex" id="heart"></i>
             <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
           </button>
+
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center">
 
           <div id="controls_player">
-
+            <div id="modal-placeholder" class="d-none">
+              <p><span>Aggiunto</span> ai brani che ti piacciono</p>
+            </div>
             <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-shuffle"></i></button>
             <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-skip-start-fill"></i></button>
             <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
@@ -193,6 +197,7 @@
 
           <button><i class="bi bi-mic"></i></button>
           <button><i class="bi bi-list"></i></button>
+
           <div>
             <div class="d-none" id="modal_control-device">
               <div id="current_device">

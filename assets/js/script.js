@@ -127,9 +127,11 @@ for (let i = 0; i < arrayArtists.length; i++) {
 function selectedHeart() {
 	let btnHeart = document.getElementById("heart");
 	let btnHeartFill = document.getElementById("heart-fill");
+	let modalPlaceholder = document.getElementById("modal-placeholder");
 
 	btnHeart.classList.toggle("d-none");
 	btnHeartFill.classList.toggle("d-none");
+	modalPlaceholder.classList.toggle("d-none");
 }
 
 function selectedPlayPause() {
