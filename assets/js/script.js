@@ -54,7 +54,7 @@ function playA(a) {
 
    if (aux.paused || aux.currentTime===0 || aux.ended) {
     playCard()
-   } else {pauseCard()}
+   } else { pauseCard() }
     // console.log(aux.paused);
     function playCard() {
         aux.play();
@@ -83,7 +83,7 @@ function searchArtist() {
   showApi(newUrl);
 }
 
-let arrayArtists = ["Night Skinny", "Radiohead", "Lazza", "Lizzo", "Maneskin", "Noyz Narcos", "Salmo", "Gemitaiz", "Twenty one Pilots", "Madonna"];
+let arrayArtists = ["Radiohead", "Lazza", "Lizzo", "Maneskin"];
 
 for (let i = 0; i < arrayArtists.length; i++) {
   let newUrl2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${arrayArtists[i]}`;
