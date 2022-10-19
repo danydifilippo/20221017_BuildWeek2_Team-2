@@ -52,7 +52,7 @@ function playA(a) {
     aux.src=a
     console.log(aux)
 
-   if (aux.paused || aux.currentTime===0 || aux.ended) {
+   if ((aux.paused) || (aux.currentTime===0) || (aux.ended)) {
     playCard()
    } else { pauseCard() }
     // console.log(aux.paused);
