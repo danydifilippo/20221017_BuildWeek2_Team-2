@@ -10792,6 +10792,9 @@ body {
   height: 100vh;
   overflow-y: hidden;
 }
+#main #logo {
+  width: 50%;
+}
 #main .aside {
   width: 17%;
 }
@@ -10810,7 +10813,7 @@ body {
 #main ul li {
   display: flex;
   align-items: center;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   color: #a6a6a6;
 }
 #main ul li a {
@@ -10903,6 +10906,7 @@ body {
   width: 30%;
   margin-left: 1%;
   border-radius: 25px;
+  position: relative;
 }
 
 #albums img {
