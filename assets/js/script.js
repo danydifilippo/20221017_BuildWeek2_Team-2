@@ -128,10 +128,35 @@ function selectedHeart() {
 	let btnHeart = document.getElementById("heart");
 	let btnHeartFill = document.getElementById("heart-fill");
 	let modalPlaceholder = document.getElementById("modal-placeholder");
+	let replaceTxtAdded = document.querySelector("#replace-txt-added");
+	let replaceTxtRemoved = document.querySelector("#replace-txt-removed");
 
 	btnHeart.classList.toggle("d-none");
 	btnHeartFill.classList.toggle("d-none");
+
+	// Al primo click, mi deve apparire il placeholder con la scritta "aggiunto"
 	modalPlaceholder.classList.toggle("d-none");
+	// Dopo pochi secondi, mi deve sparí il placeholder
+	const showPlaceholdet = setTimeout(() => {
+		modalPlaceholder.classList.add("d-none");
+	}, 3000);
+
+	// quando clicco di nuovo sul cuoricino, deve comparire il placeholder
+	// con la scritta "rimosso"
+	if (replaceTxtRemoved.classList === "") {
+		modalPlaceholder.classList.remove("d-none");
+
+		replaceTxtAdded.classList.toggle("d-none");
+		replaceTxtRemoved.classList.toggle("d-none");
+
+		const showRemoveTxt = setTimeout(() => {
+			modalPlaceholder.classList.add("d-none");
+		});
+	}
+
+	// CHIEDERE A LIDIA PERCHE FUNZIONA QUESTA MIA LOGICA
+	replaceTxtAdded.classList.toggle("d-none");
+	replaceTxtRemoved.classList.toggle("d-none");
 }
 
 function selectedPlayPause() {
