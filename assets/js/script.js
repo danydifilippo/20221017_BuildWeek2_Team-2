@@ -3,19 +3,17 @@ async function showApi(n) {
   let responseText = await musiclink.json();
   let music = responseText.data;
   console.log(music);
+  i=Number(Math.floor(Math.random()*25))
 
   function card() {
     let showcard = document.getElementById("artists");
     showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
-            <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
-            <audio id='player-album'>
-            <source src="${music[2].preview}" type='audio/mpeg'>
-            </audio>
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
+            <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}')">
             </div>
             <div class="card-body">
-            <h5 class="card-title text-white">${music[0].artist.name}</h5>
+            <h5 class="card-title text-white">${music[i].artist.name}</h5>
             <h6>Artists</h6>
             </div>`;
   }
@@ -25,44 +23,73 @@ async function showApi(n) {
     let showAlbum = document.getElementById("albums");
     showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
-        <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">  
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[2].preview}')">
+        <img src="${music[i].album.cover_medium}" class="card-img-top" alt="album">  
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}')">
         </div>
         <div class="card-body">
-        <h5 class="card-title text-white">${music[2].album.title}</h5>
-        <p>${music[2].artist.name}</p>
+        <h5 class="card-title text-white">${music[i].album.title}</h5>
+        <p>${music[i].artist.name}</p>
         </div>`;
   }
   albums();
 
-  // function artistPage() {
-  //   let
-  // }
+
 }
-// let a = document.querySelector('.player')
-// console.log(a)
-// let sound = new Audio(a);
+
+async function returnApi(newA) {
+  let musicLink = await fetch(newA);
+  let respText = await musicLink.json();
+  let artista = respText.data;
+  console.log(artista);
+  let i=Number(Math.floor(Math.random()*25))
+  let mn=Number(Math.floor(Math.random()*4+1))
+  let sc=Number(Math.floor(Math.random()*5))
+  let s=Number(Math.floor(Math.random()*9))
+  let nr=Number(Math.floor(Math.random()*700000+100000))
+  
+
+  function fillArtistPage() {
+  let showArtist = document.getElementById("headArtist");
+  showArtist.innerHTML = `<img src="${artista[i].artist.picture_xl}" alt="">
+    <p><img src="./assets/img/artist-verified-png.png" alt="" width="50px"><span>Verified artist</span></p>
+    <h1>${artista[i].artist.name}</h1> 
+    <p>18,375,540 monthly listener</p>`
+    console.log(showArtist)
+let follow = document.getElementById('follow');
+  follow.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${artista[i].preview}')">
+    <button>Follow</button>`
+let showSongs = document.getElementById('artistSongs');
+console.log(showSongs);
+for (let i = 1; i < 4; i++) {
+  showSongs.innerHTML += `<tr><th scope="row" onclick="playA('${artista[i].preview}')>${i}</th><td><img src="${artista[i].album.cover_small}" class="card-img-top" alt="album"></td>
+    <td>${artista[i].title}</td>
+    <td>${nr}</td>
+    <td>${mn}:${sc}${s}</td>
+    <td></td>
+  </tr>`  
+  }
+}
+fillArtistPage()
+}
+function artistPage(a) {
+  if(a==='Måneskin'){a='Maneskin'};
+  let newUrl3 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${a}`;
+  artista=returnApi(newUrl3)
+  console.log(artista);
+  fillArtistPage(artista)
+}
+
+
 
 function playA(a) {
   let aux = document.querySelector(".player");
-  aux.src = a;
-  console.log(aux);
-
-  if (aux.paused || aux.currentTime === 0 || aux.ended) {
-    playCard();
-  } else {
-    pauseCard();
-  }
-  // console.log(aux.paused);
-  function playCard() {
-    aux.play();
-  }
-
-  function pauseCard() {
-    aux.pause();
-    console.log("ciao");
-  }
-}
+      if (aux.paused || aux.currentTime === 0 || aux.ended) {
+        aux.src = a 
+        aux.play()
+      } else { 
+        aux.pause()
+      }
+    }
 
 const searchBar = document.getElementById("searchBar");
 console.log(searchBar);
