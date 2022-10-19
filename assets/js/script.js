@@ -10,7 +10,6 @@ async function showApi(n) {
             <img src="${music[0].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista">
              <audio id='player-album'>
             <source src="${music[2].preview}" type='audio/mpeg'>
-            </audio>
             <button class='btn_audio-preview' onclick="togglePlay()"><i id="playIcon" class="bi bi-play-circle-fill d-block"></i></button>
             <div class="card-body">
             <h5 class="card-title text-white">${music[0].artist.name}</h5>
@@ -23,11 +22,8 @@ async function showApi(n) {
     let showAlbum = document.getElementById("albums");
     showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
-          <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">
-          <audio id="player-album">
-            <source src="${music[2].preview}" type='audio/mpeg'>
-          </audio>
-          <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="">
+        <img src="${music[2].album.cover_medium}" class="card-img-top" alt="album">  
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[2].preview}')">
         </div>
         <div class="card-body">
         <h5 class="card-title text-white">${music[2].album.title}</h5>
@@ -35,32 +31,42 @@ async function showApi(n) {
         </div>`;
   }
   albums();
+
+  // function artistPage() {
+  //   let 
+  // }
+
+
+
+}
+// let a = document.querySelector('.player')
+// console.log(a)
+// let sound = new Audio(a);
+
+
+
+
+function playA(a) {
+  
+    let aux = document.querySelector(".player");
+    aux.src=a
+    console.log(aux)
+
+   if (aux.paused || aux.currentTime===0 || aux.ended) {
+    playCard()
+   } else {pauseCard()}
+    // console.log(aux.paused);
+    function playCard() {
+        aux.play();
+    }
+
+    function pauseCard() {
+        aux.pause();
+      console.log('ciao');
+    }
 }
 
-let play = false;
 
-function togglePlay() {
-  let audioElement = document.getElementById("player-album");
-
-  console.log(play);
-
-  play ? pauseCard() : playCard();
-
-  function playCard() {
-    audioElement.play();
-
-    play = true;
-
-    console.log("funzione playCard", play);
-  }
-  function pauseCard() {
-    audioElement.pause();
-
-    play = false;
-
-    console.log("funzione pauseCard", play);
-  }
-}
 
 const searchBar = document.getElementById("searchBar");
 console.log(searchBar);
