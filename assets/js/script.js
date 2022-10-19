@@ -39,38 +39,44 @@ async function showApi(n) {
 async function returnApi(newA) {
   let musicLink = await fetch(newA);
   let respText = await musicLink.json();
-  let musica = respText.data;
-  console.log(musica);
-  i=Number(Math.floor(Math.random()*25))
-}
-function artistPage(a) {
-  if(a='Måneskin'){a='Maneskin'};
-  let newUrl3 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${a}`;
-  artista=returnApi(newUrl3)
+  let artista = respText.data;
   console.log(artista);
-let showArtist = document.getElementById("headArtist");
-  showArtist.innerHTML += `<img src="${artista[i].artist.picture_xl}" alt="">
-    <p><img src="./assets/img/artist-verified-png.png" alt="">Verified artist</p>
+  let i=Number(Math.floor(Math.random()*25))
+  let mn=Number(Math.floor(Math.random()*4+1))
+  let sc=Number(Math.floor(Math.random()*5))
+  let s=Number(Math.floor(Math.random()*9))
+  let nr=Number(Math.floor(Math.random()*700000+100000))
+  
+
+  function fillArtistPage() {
+  let showArtist = document.getElementById("headArtist");
+  showArtist.innerHTML = `<img src="${artista[i].artist.picture_xl}" alt="">
+    <p><img src="./assets/img/artist-verified-png.png" alt="" width="50px"><span>Verified artist</span></p>
     <h1>${artista[i].artist.name}</h1> 
     <p>18,375,540 monthly listener</p>`
     console.log(showArtist)
 let follow = document.getElementById('follow');
-  follow.innerHTML += `<img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${artista[i].preview}')">
+  follow.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${artista[i].preview}')">
     <button>Follow</button>`
 let showSongs = document.getElementById('artistSongs');
-  mn=Number(Math.floor(Math.random()*4+1))
-  sc=Number(Math.floor(Math.random()*5))
-  sc=Number(Math.floor(Math.random()*9))
-  nr=Number(Math.floor(Math.random()*700000+100000))
-  for (let i = 1; i < 4; i++) {
-  showSongs.innerHTML += `<tbody><tr><th scope="row" onclick="playA('${artista[i].preview}')>${i}</th><td><img src="${artista[i].album.cover_small}" class="card-img-top" alt="album"></td>
-    <td>${a[i].title}</td>
+console.log(showSongs);
+for (let i = 1; i < 4; i++) {
+  showSongs.innerHTML += `<tr><th scope="row" onclick="playA('${artista[i].preview}')>${i}</th><td><img src="${artista[i].album.cover_small}" class="card-img-top" alt="album"></td>
+    <td>${artista[i].title}</td>
     <td>${nr}</td>
     <td>${mn}:${sc}${s}</td>
     <td></td>
-  </tr>
-  </tbody>`  
+  </tr>`  
   }
+}
+fillArtistPage()
+}
+function artistPage(a) {
+  if(a==='Måneskin'){a='Maneskin'};
+  let newUrl3 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${a}`;
+  artista=returnApi(newUrl3)
+  console.log(artista);
+  fillArtistPage(artista)
 }
 
 
