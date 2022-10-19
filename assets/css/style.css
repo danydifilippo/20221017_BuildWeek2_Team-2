@@ -10800,6 +10800,8 @@ body {
 }
 #main #splashPage {
   width: 66%;
+  overflow-y: scroll;
+  height: 100vh;
 }
 #main ul {
   list-style: none;
@@ -10851,8 +10853,7 @@ body {
   flex-wrap: wrap;
   justify-content: start;
   align-content: flex-start;
-  overflow-y: scroll;
-  height: 100vh;
+  height: fit-content;
 }
 #artists .card,
 #albums .card {
@@ -10910,6 +10911,18 @@ p {
 .friends {
   width: 60px;
   border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a6a6a6;
 }
 
 #player-spotify {
