@@ -206,47 +206,102 @@
           <div class="d-flex justify-content-between align-items-center position-sticky bottom-0" id="player-spotify">
             <div class="d-flex justify-content-around">
               <div>
-                <img id="cover-player" src="./assets/img/logo-player.png" alt="" />
+                <img id="cover-player" src="./assets/img/logo-player.png" alt="">
               </div>
               <div id="text-player">
                 <h4>Forza Roma!</h4>
                 <p id="sub-test_player">Lorenzo Pellegrini</p>
               </div>
+    
               <button id="heart-player" onclick="selectedHeart()">
                 <i class="bi bi-heart d-flex" id="heart"></i>
                 <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
               </button>
+    
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center">
+    
               <div id="controls_player">
-                <button onclick="selectedBtnAudioColorizeGreen(event)"><i class="bi bi-shuffle"></i></button>
-                <button><i class="bi bi-skip-start-fill"></i></button>
+                <div id="modal-placeholder" class="d-none">
+                  <p><span id="replace-txt-added" class="d-none">Aggiunto ai</span><span id="replace-txt-removed"
+                      class="">Rimosso dai</span> brani che ti piacciono</p>
+                </div>
+                <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-shuffle"></i></button>
+                <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-skip-start-fill"></i></button>
                 <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
                   <i class="bi bi-play-circle" id="btn_play"></i>
                   <i class="bi bi-pause-circle-fill d-none" id="btn_pause"></i>
                 </button>
-                <button><i class="bi bi-skip-end-fill"></i></button>
-                <button><i class="bi bi-repeat"></i></button>
+                <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-skip-end-fill"></i></button>
+                <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-repeat"></i></button>
               </div>
-
+    
               <div id="filler-bar">
                 <span id="progress-time">0:12</span>
-
+    
                 <span id="container_filler-bar">
                   <span id="filler_bar-time"></span>
                 </span>
-
+    
                 <span id="duration-time">3:22</span>
               </div>
             </div>
             <div class="d-flex justify-content-end align-items-center" id="player_right-side">
-              <i class="bi bi-list"></i>
-              <i class="bi bi-pc-display-horizontal"></i>
-              <i class="bi bi-volume-up"></i>
-              <input type="range" class="form-range" id="customRange1" />
-              <i class="bi bi-arrows-angle-expand"></i>
+    
+              <button><i class="bi bi-mic"></i></button>
+              <button><i class="bi bi-list"></i></button>
+    
+              <div>
+                <div class="d-none" id="modal_control-device">
+                  <div id="current_device">
+                    <div>
+                      <i class="bi bi-laptop"></i>
+                    </div>
+                    <div>
+                      <h3>Dispositivo Corrente</h3>
+                      <p>Questo computer</p>
+                    </div>
+                  </div>
+                  <div id="error_device">
+                    <h4>Nessun altro dispositivo trovato</h4>
+                  </div>
+                  <div id="control_wifi">
+                    <div><i class="bi bi-wifi"></i></div>
+                    <div>
+                      <h4>Controlla il Wi-Fi</h4>
+                      <p>Connetti i dispositivi in uso alla stessa rete Wi-Fi.</p>
+                    </div>
+                  </div>
+                  <div id="control_another-device">
+                    <div><i class="bi bi-pc-display"></i></div>
+                    <div>
+                      <h4>Riproduci da un altro dispositivo</h4>
+                      <p>Verrà visualizzato automaticamente qui.</p>
+                    </div>
+                  </div>
+                  <div id="control_speaker">
+                    <div><i class="bi bi-power"></i></div>
+                    <div>
+                      <h4>Riavvia l'altoparlante</h4>
+                      <p>Oppure segui le istruzioni di configurazione se si tratta di un nuovo dispositivo</p>
+                    </div>
+                  </div>
+                  <div id="modal-sub">
+                    <h4>Non vedi il dispositivo?</h4>
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </div>
+    
+                  <div id="square-rotate"></div>
+                </div>
+                <button><i class="bi bi-pc-display-horizontal" onclick="selectedModalControlDevic()"></i></button>
+              </div>
+    
+              <button><i class="bi bi-volume-up"></i></button>
+              <input type="range" class="form-range" id="customRange1">
+              <button><i class="bi bi-arrows-angle-expand"></i></button>
             </div>
           </div>
+    
         </div>
         <audio class="player" src=""></audio>
       </div>

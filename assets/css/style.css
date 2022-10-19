@@ -10967,7 +10967,7 @@ p {
 }
 
 #player-spotify {
-  background-color: #191414;
+  background-color: #181818;
   padding: 2rem 2rem;
   color: white;
   width: 100%;
@@ -10989,9 +10989,12 @@ p {
   margin-right: 15px;
 }
 
-#heart-player {
+#container_heart-placeholder {
   display: flex;
   align-items: center;
+}
+
+#heart-player {
   font-size: 1.3rem;
   color: white;
 }
@@ -11008,7 +11011,8 @@ p {
 }
 
 #controls_player {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  position: relative;
 }
 
 #filled-bar {
@@ -11039,7 +11043,7 @@ p {
 }
 
 #player_right-side i {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 #btn_play-pause--audio {
@@ -11064,7 +11068,90 @@ i:hover {
 }
 
 .btn_colorize-green {
+  color: green !important;
+}
+
+#player_right-side {
+  position: relative;
+}
+#player_right-side button {
+  color: grey;
+}
+#player_right-side button i {
+  font-size: 1.1rem;
+}
+#player_right-side button:hover {
+  color: white;
+}
+#player_right-side #modal_control-device {
+  position: absolute;
+  top: -418px;
+  background-color: #121212;
+  border-radius: 3px;
+  font-size: 0.3rem;
+  padding: 1.5rem;
+  line-height: 1.5;
+  min-width: 350px;
+  right: 16px;
+}
+#player_right-side #modal_control-device i {
+  font-size: 1.6rem;
+  color: grey;
+}
+#player_right-side #modal_control-device p {
+  color: grey;
+}
+#player_right-side #modal_control-device h4, #player_right-side #modal_control-device .h4 {
+  font-size: 0.9rem;
+}
+#player_right-side #current_device,
+#player_right-side #control_wifi,
+#player_right-side #control_another-device,
+#player_right-side #control_speaker,
+#player_right-side #error_device {
+  display: flex !important;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#player_right-side #current_device i,
+#player_right-side #current_device p {
   color: green;
+}
+#player_right-side #modal-sub {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+#player_right-side #modal-sub i {
+  font-size: 1rem;
+}
+#player_right-side #square-rotate {
+  height: 40px;
+  width: 30px;
+  background-color: #121212;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 45%;
+  bottom: -10px;
+}
+#player_right-side #container_heart-placeholder {
+  position: relative;
+}
+
+#modal-placeholder {
+  position: absolute;
+  top: -68px;
+  background-color: rgb(56, 151, 240);
+  border-radius: 5px;
+  color: white;
+  padding: 8px 5px;
+  display: inline-flex;
+  width: 278px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  right: -25px;
 }
 
 @keyframes progress-animation {

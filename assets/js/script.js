@@ -3,7 +3,7 @@ async function showApi(n) {
   let responseText = await musiclink.json();
   let music = responseText.data;
   console.log(music);
-  i=Number(Math.floor(Math.random()*25))
+  i = Number(Math.floor(Math.random() * 25));
 
   function card() {
     let showcard = document.getElementById("artists");
@@ -32,8 +32,6 @@ async function showApi(n) {
         </div>`;
   }
   albums();
-
-
 }
 
 async function returnApi(newA) {
@@ -41,55 +39,54 @@ async function returnApi(newA) {
   let respText = await musicLink.json();
   let artista = respText.data;
   console.log(artista);
-  let i=Number(Math.floor(Math.random()*25))
-  let mn=Number(Math.floor(Math.random()*4+1))
-  let sc=Number(Math.floor(Math.random()*5))
-  let s=Number(Math.floor(Math.random()*9))
-  let nr=Number(Math.floor(Math.random()*700000+100000))
-  
+  let i = Number(Math.floor(Math.random() * 25));
+  let mn = Number(Math.floor(Math.random() * 4 + 1));
+  let sc = Number(Math.floor(Math.random() * 5));
+  let s = Number(Math.floor(Math.random() * 9));
+  let nr = Number(Math.floor(Math.random() * 700000 + 100000));
 
   function fillArtistPage() {
-  let showArtist = document.getElementById("headArtist");
-  showArtist.innerHTML = `<img src="${artista[i].artist.picture_xl}" alt="">
+    let showArtist = document.getElementById("headArtist");
+    showArtist.innerHTML = `<img src="${artista[i].artist.picture_xl}" alt="">
     <p><img src="./assets/img/artist-verified-png.png" alt="" width="50px"><span>Verified artist</span></p>
     <h1>${artista[i].artist.name}</h1> 
-    <p>18,375,540 monthly listener</p>`
-    console.log(showArtist)
-let follow = document.getElementById('follow');
-  follow.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${artista[i].preview}')">
-    <button>Follow</button>`
-let showSongs = document.getElementById('artistSongs');
-console.log(showSongs);
-for (let i = 1; i < 4; i++) {
-  showSongs.innerHTML += `<tr><th scope="row" onclick="playA('${artista[i].preview}')>${i}</th><td><img src="${artista[i].album.cover_small}" class="card-img-top" alt="album"></td>
+    <p>18,375,540 monthly listener</p>`;
+    console.log(showArtist);
+    let follow = document.getElementById("follow");
+    follow.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${artista[i].preview}')">
+    <button>Follow</button>`;
+    let showSongs = document.getElementById("artistSongs");
+    console.log(showSongs);
+    for (let i = 1; i < 4; i++) {
+      showSongs.innerHTML += `<tr><th scope="row" onclick="playA('${artista[i].preview}')>${i}</th><td><img src="${artista[i].album.cover_small}" class="card-img-top" alt="album"></td>
     <td>${artista[i].title}</td>
     <td>${nr}</td>
     <td>${mn}:${sc}${s}</td>
     <td></td>
-  </tr>`  
+  </tr>`;
+    }
   }
-}
-fillArtistPage()
+  fillArtistPage();
 }
 function artistPage(a) {
-  if(a==='Måneskin'){a='Maneskin'};
+  if (a === "Måneskin") {
+    a = "Maneskin";
+  }
   let newUrl3 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${a}`;
-  artista=returnApi(newUrl3)
+  artista = returnApi(newUrl3);
   console.log(artista);
-  fillArtistPage(artista)
+  fillArtistPage(artista);
 }
-
-
 
 function playA(a) {
   let aux = document.querySelector(".player");
-      if (aux.paused || aux.currentTime === 0 || aux.ended) {
-        aux.src = a 
-        aux.play()
-      } else { 
-        aux.pause()
-      }
-    }
+  if (aux.paused || aux.currentTime === 0 || aux.ended) {
+    aux.src = a;
+    aux.play();
+  } else {
+    aux.pause();
+  }
+}
 
 const searchBar = document.getElementById("searchBar");
 console.log(searchBar);
@@ -154,19 +151,57 @@ for (let i = 0; i < arrayArtists.length; i++) {
 function selectedHeart() {
   let btnHeart = document.getElementById("heart");
   let btnHeartFill = document.getElementById("heart-fill");
+  let modalPlaceholder = document.getElementById("modal-placeholder");
+  let replaceTxtAdded = document.querySelector("#replace-txt-added");
+  let replaceTxtRemoved = document.querySelector("#replace-txt-removed");
 
   btnHeart.classList.toggle("d-none");
   btnHeartFill.classList.toggle("d-none");
+
+  // Al primo click, mi deve apparire il placeholder con la scritta "aggiunto"
+  modalPlaceholder.classList.toggle("d-none");
+  // Dopo pochi secondi, mi deve sparí il placeholder
+  const showPlaceholdet = setTimeout(() => {
+    modalPlaceholder.classList.add("d-none");
+  }, 3000);
+
+  // quando clicco di nuovo sul cuoricino, deve comparire il placeholder
+  // con la scritta "rimosso"
+  if (replaceTxtRemoved.classList === "") {
+    modalPlaceholder.classList.remove("d-none");
+
+    replaceTxtAdded.classList.toggle("d-none");
+    replaceTxtRemoved.classList.toggle("d-none");
+
+    const showRemoveTxt = setTimeout(() => {
+      modalPlaceholder.classList.add("d-none");
+    }, 3000);
+  }
+
+  // CHIEDERE A LIDIA PERCHE FUNZIONA QUESTA MIA LOGICA
+  replaceTxtAdded.classList.toggle("d-none");
+  replaceTxtRemoved.classList.toggle("d-none");
 }
 
 function selectedPlayPause() {
-	let btnPlay = document.getElementById("btn_play");
-	let btnPause = document.getElementById("btn_pause");
+  let btnPlay = document.getElementById("btn_play");
+  let btnPause = document.getElementById("btn_pause");
 
-	btnPlay.classList.toggle("d-none");
-	btnPause.classList.toggle("d-none");
+  btnPlay.classList.toggle("d-none");
+  btnPause.classList.toggle("d-none");
 }
 
 function selectedBtnAudioColorizeGreen(event) {
-	console.log(event);
+  console.log(event);
+  let btnSelected = event.querySelector(".bi");
+
+  console.log(btnSelected);
+
+  btnSelected.classList.toggle("btn_colorize-green");
+}
+
+function selectedModalControlDevic() {
+  let modalElement = document.getElementById("modal_control-device");
+
+  modalElement.classList.toggle("d-none");
 }
