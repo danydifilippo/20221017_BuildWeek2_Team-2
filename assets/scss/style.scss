@@ -139,6 +139,11 @@ p {
 	color: white;
 	width: 100%;
 	height: 100px;
+
+	button {
+		background-color: transparent;
+		border: none;
+	}
 }
 
 #cover-player {
@@ -156,8 +161,7 @@ p {
 	display: flex;
 	align-items: center;
 	font-size: 1.3rem;
-	// color: grey;
-	// color: green;
+	color: white;
 
 	.bi-heart-fill {
 		color: green;
@@ -210,6 +214,29 @@ p {
 
 #player_right-side i {
 	margin-right: 2rem;
+}
+
+#btn_play-pause--audio {
+	color: white;
+}
+
+i:hover {
+	cursor: pointer;
+}
+
+.bi-shuffle,
+.bi-skip-start-fill,
+.bi-skip-end-fill,
+.bi-repeat {
+	color: grey;
+
+	&:hover {
+		color: white;
+	}
+}
+
+.btn_colorize-green {
+	color: green;
 }
 
 @keyframes progress-animation {

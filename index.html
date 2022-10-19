@@ -160,19 +160,25 @@
             <h4>Forza Roma!</h4>
             <p id="sub-test_player">Lorenzo Pellegrini</p>
           </div>
-          <div id="heart-player" onclick="selectedHeart()">
+          <button id="heart-player" onclick="selectedHeart()">
             <i class="bi bi-heart d-flex" id="heart"></i>
             <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
-          </div>
+          </button>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center">
+
           <div id="controls_player">
-            <i class="bi bi-shuffle"></i>
-            <i class="bi bi-skip-start-fill"></i>
-            <i class="bi bi-play-circle"></i>
-            <i class="bi bi-skip-end-fill"></i>
-            <i class="bi bi-repeat"></i>
+
+            <button onclick="selectedBtnAudioColorizeGreen(event)"><i class="bi bi-shuffle"></i></button>
+            <button><i class="bi bi-skip-start-fill"></i></button>
+            <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
+              <i class="bi bi-play-circle" id="btn_play"></i>
+              <i class="bi bi-pause-circle-fill d-none" id="btn_pause"></i>
+            </button>
+            <button><i class="bi bi-skip-end-fill"></i></button>
+            <button><i class="bi bi-repeat"></i></button>
           </div>
+
           <div id="filler-bar">
             <span id="progress-time">0:12</span>
 
