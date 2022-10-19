@@ -10838,8 +10838,20 @@ body {
   color: #a6a6a6;
 }
 
-#splashPage {
-  height: 100vh;
+.arrow-btn {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #000000;
+  position: relative;
+  margin-inline: 1%;
 }
 
 #artistFolder h3, #artistFolder .h3 {
@@ -10877,6 +10889,22 @@ body {
   display: inline-flex;
 }
 
+.headings {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.backPage {
+  background-color: #121212;
+}
+
+#searchBar {
+  width: 30%;
+  margin-left: 1%;
+  border-radius: 25px;
+}
+
 #albums img {
   border-radius: 4px;
   overflow: hidden;
@@ -10886,6 +10914,15 @@ body {
 
 .resultCard {
   width: 18% !important;
+}
+
+.categoriesCard {
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 18%;
+}
+.categoriesCard img {
+  width: 100% !important;
 }
 
 .preview {

@@ -1,208 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify Clone</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+  <body>
+    <div id="main">
+      <div id="app" class="row m-0">
+        <div class="bg-black aside text-white">
+          <ul class="pt-3">
+            <li><i class="bi bi-three-dots"></i></li>
+            <li>
+              <a href="./index.html"><i class="bi bi-house-door"></i> Home</a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-search"></i> Search</a>
+            </li>
+            <li class="mb-5">
+              <a href=""><i class="bi bi-collection"></i> Your Library</a>
+            </li>
+            <li><i class="bi bi-plus-square-fill"></i> Create Playlist</li>
+            <li><i id="like" class="bi bi-chat-left-heart-fill"></i> Liked Songs</li>
+          </ul>
+          <hr />
+          <p class="pb-3">Pepega music</p>
+          <p class="pb-3">Daily mix 1</p>
+          <p class="pb-3">Daily mix 2</p>
+          <p class="pb-3">Daily mix 3</p>
+          <p class="pb-3">Team 2 the best</p>
+          <p class="pb-3">Epicode trash music</p>
+          <p class="pb-3">Dummy Playlist fot developers</p>
+          <p class="pb-3">Fuck Fedez</p>
+        </div>
+        <div id="splashPage" class="backPage m-0 p-0">
 
-<body>
-  <div id="main">
-    <div id="app" class="row m-0">
-      <div class=" bg-black aside text-white">
-        <ul class="pt-3">
-          <li><i class="bi bi-three-dots"></i></li>
-          <li>
-            <a href="./index.html"><i class="bi bi-house-door"></i> Home</a>
-          </li>
-          <li>
-            <a href=""><i class="bi bi-search"></i> Search</a>
-          </li>
-          <li class="mb-5">
-            <a href=""><i class="bi bi-collection"></i> Your Library</a>
-          </li>
-          <li><i class="bi bi-plus-square-fill"></i> Create Playlist</li>
-          <li><i id="like" class="bi bi-chat-left-heart-fill"></i> Liked Songs</li>
-        </ul>
-        <hr />
-        <p class="pb-3">Pepega music</p>
-        <p class="pb-3">Daily mix 1</p>
-        <p class="pb-3">Daily mix 2</p>
-        <p class="pb-3">Daily mix 3</p>
-        <p class="pb-3">Team 2 the best</p>
-        <p class="pb-3">Epicode trash music</p>
-        <p class="pb-3">Dummy Playlist fot developers</p>
-        <p class="pb-3">Fuck Fedez</p>
-      </div>
-      <div id="splashPage" class=" bg-black m-0 p-0">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" />
-          <button class="btn btn-outline-success" type="reset" onclick="searchArtist()">Search</button>
-        </form>
-        <div id="artistFolder" class="bg-black text-white">
-          <h3>Artists</h3>
-          <div id="artists" class="bg-black"></div>
-        </div>
-        <div id="albumFolder" class="bg-black text-white ">
-          <h3>Albums</h3>
-          <div id="albums" class="bg-black"></div>
-        </div>
-        
-      </div>
-      <div class="p-0 bg-black aside">
-        <div class="d-flex justify-content-between pt-3 px-3 w-100">
-          <div>
-            <p>Friend activity</p>
-          </div>
-          <div><i class="bi bi-person-plus"></i></div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/giorgia_Meloni-14-6-1.jpg" alt="" />
+          <div id="searchPage">
+            <form class="d-flex align-items-center mt-4" role="search">
+              <div class="arrow"><a  class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a></div>
+              <div class="arrow"><a  class="text-white" href=""><i class="fa-solid fa-chevron-right arrow-btn"></i></a></div>
+              <input class="form-control me-2" type="search" placeholder="What do you want to listen to?" aria-label="Search" id="searchBar" />
+              <button class="btn btn-outline-success" type="reset" onclick="searchArtist()">Search</button>
+            </form>
+            <div id="artistFolder" class="backPage text-white">
+              <h3 class="fs-4 headings">Artists</h3>
+              <div id="artists" class="backPage"></div>
             </div>
-            <div class="ms-3 track">
-              <h3>Evil Meloni</h3>
-              <p>French tour - Carla Bruni</p>
-              <p><i class="bi bi-disc"></i> The winner takes it all</p>
+            <div id="albumFolder" class="backPage text-white">
+              <h3 class="fs-4 headings">Albums</h3>
+              <div id="albums" class="backPage"></div>
+            </div>
+            <h3 class="fs-4 headings">Categories</h3>
+             <div id="categories" class="d-flex flex-wrap p-2">
+              <div class="categoriesCard"><img src="./assets/img/latin.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/charts.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/dance.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/hiphop.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/liveevents.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/podcast.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/foryou.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/pop.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/rock.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/chill.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/class.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/decades.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/country.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/discover.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/fcus.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/gaming.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/home.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/indie.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/jazz.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/k-p.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/metal.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/mood.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/newrel.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/party.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/sanremo.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/punk.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/r&b.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/raggae.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/romance.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/sleep.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/soul.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/summer.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/trending.PNG" alt="" /></div>
+              <div class="categoriesCard"><img src="./assets/img/workout.PNG" alt="" /></div>
+              
+            </div>
+           </div>
+          </div>
+          <div class="p-0 bg-black aside">
+            <div class="d-flex justify-content-between pt-3 px-3 w-100">
+              <div>
+                <p>Friend activity</p>
+              </div>
+              <div><i class="bi bi-person-plus"></i></div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/giorgia_Meloni-14-6-1.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Evil Meloni</h3>
+                  <p>French tour - Carla Bruni</p>
+                  <p><i class="bi bi-disc"></i> The winner takes it all</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>29 min</p>
+              </div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/howard_header1.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Howard the duck</h3>
+                  <p>I Grandi Successi - Al Bano e Romina Power</p>
+                  <p><i class="bi bi-disc"></i> Il Ballo del Qua Qua</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>9 min</p>
+              </div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/e8f23e0c677934cce2171493ad65dc1f.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Max Mayfield</h3>
+                  <p>Hounds of Love - Kate Bush</p>
+                  <p><i class="bi bi-disc"></i> Runnin'Up That Hill</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>3 min</p>
+              </div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/star-lord.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Peter Jason Quill</h3>
+                  <p>Awesome Love Mixtape vol.1</p>
+                  <p><i class="bi bi-disc"></i> Come and Get your Love</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>39 min</p>
+              </div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/Cannavacciuolo.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Antonino Cannavacciuolo</h3>
+                  <p>Povero Gabbiano - Gianni Celeste</p>
+                  <p><i class="bi bi-disc"></i> Povero Gabbiano</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>20 min</p>
+              </div>
+            </div>
+            <div class="Utents">
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <img class="friends" src="./assets/img/cassano.jpg" alt="" />
+                </div>
+                <div class="ms-3 track">
+                  <h3>Antonio Cassano</h3>
+                  <p>Notti Brave - Carl Brave</p>
+                  <p><i class="bi bi-disc"></i> Chapeau</p>
+                </div>
+              </div>
+              <div class="time me-1">
+                <p>7 min</p>
+              </div>
             </div>
           </div>
-          <div class="time me-1">
-            <p>29 min</p>
-          </div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/howard_header1.jpg" alt="" />
+          <div class="d-flex justify-content-between align-items-center position-sticky bottom-0" id="player-spotify">
+            <div class="d-flex justify-content-around">
+              <div>
+                <img id="cover-player" src="./assets/img/logo-player.png" alt="" />
+              </div>
+              <div id="text-player">
+                <h4>Forza Roma!</h4>
+                <p id="sub-test_player">Lorenzo Pellegrini</p>
+              </div>
+              <button id="heart-player" onclick="selectedHeart()">
+                <i class="bi bi-heart d-flex" id="heart"></i>
+                <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
+              </button>
             </div>
-            <div class="ms-3 track">
-              <h3>Howard the duck</h3>
-              <p>I Grandi Successi - Al Bano e Romina Power</p>
-              <p><i class="bi bi-disc"></i> Il Ballo del Qua Qua</p>
-            </div>
-          </div>
-          <div class="time me-1">
-            <p>9 min</p>
-          </div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/e8f23e0c677934cce2171493ad65dc1f.jpg" alt="" />
-            </div>
-            <div class="ms-3 track">
-              <h3>Max Mayfield</h3>
-              <p>Hounds of Love - Kate Bush</p>
-              <p><i class="bi bi-disc"></i> Runnin'Up That Hill</p>
-            </div>
-          </div>
-          <div class="time me-1">
-            <p>3 min</p>
-          </div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/star-lord.jpg" alt="" />
-            </div>
-            <div class="ms-3 track">
-              <h3>Peter Jason Quill</h3>
-              <p>Awesome Love Mixtape vol.1</p>
-              <p><i class="bi bi-disc"></i> Come and Get your Love</p>
-            </div>
-          </div>
-          <div class="time me-1">
-            <p>39 min</p>
-          </div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/Cannavacciuolo.jpg" alt="" />
-            </div>
-            <div class="ms-3 track">
-              <h3>Antonino Cannavacciuolo</h3>
-              <p>Povero Gabbiano - Gianni Celeste</p>
-              <p><i class="bi bi-disc"></i> Povero Gabbiano</p>
-            </div>
-          </div>
-          <div class="time me-1">
-            <p>20 min</p>
-          </div>
-        </div>
-        <div class="Utents">
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              <img class="friends" src="./assets/img/cassano.jpg" alt="" />
-            </div>
-            <div class="ms-3 track">
-              <h3>Antonio Cassano</h3>
-              <p>Notti Brave - Carl Brave</p>
-              <p><i class="bi bi-disc"></i> Chapeau</p>
-            </div>
-          </div>
-          <div class="time me-1">
-            <p>7 min</p>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center position-sticky bottom-0" id="player-spotify">
-        <div class="d-flex justify-content-around">
-          <div>
-            <img id="cover-player" src="./assets/img/logo-player.png" alt="">
-          </div>
-          <div id="text-player">
-            <h4>Forza Roma!</h4>
-            <p id="sub-test_player">Lorenzo Pellegrini</p>
-          </div>
-          <button id="heart-player" onclick="selectedHeart()">
-            <i class="bi bi-heart d-flex" id="heart"></i>
-            <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
-          </button>
-        </div>
-        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <div id="controls_player">
+                <button onclick="selectedBtnAudioColorizeGreen(event)"><i class="bi bi-shuffle"></i></button>
+                <button><i class="bi bi-skip-start-fill"></i></button>
+                <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
+                  <i class="bi bi-play-circle" id="btn_play"></i>
+                  <i class="bi bi-pause-circle-fill d-none" id="btn_pause"></i>
+                </button>
+                <button><i class="bi bi-skip-end-fill"></i></button>
+                <button><i class="bi bi-repeat"></i></button>
+              </div>
 
-          <div id="controls_player">
+              <div id="filler-bar">
+                <span id="progress-time">0:12</span>
 
-            <button onclick="selectedBtnAudioColorizeGreen(event)"><i class="bi bi-shuffle"></i></button>
-            <button><i class="bi bi-skip-start-fill"></i></button>
-            <button id="btn_play-pause--audio" onclick="selectedPlayPause()">
-              <i class="bi bi-play-circle" id="btn_play"></i>
-              <i class="bi bi-pause-circle-fill d-none" id="btn_pause"></i>
-            </button>
-            <button><i class="bi bi-skip-end-fill"></i></button>
-            <button><i class="bi bi-repeat"></i></button>
-          </div>
+                <span id="container_filler-bar">
+                  <span id="filler_bar-time"></span>
+                </span>
 
-          <div id="filler-bar">
-            <span id="progress-time">0:12</span>
-
-            <span id="container_filler-bar">
-              <span id="filler_bar-time"></span>
-            </span>
-
-            <span id="duration-time">3:22</span>
+                <span id="duration-time">3:22</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end align-items-center" id="player_right-side">
+              <i class="bi bi-list"></i>
+              <i class="bi bi-pc-display-horizontal"></i>
+              <i class="bi bi-volume-up"></i>
+              <input type="range" class="form-range" id="customRange1" />
+              <i class="bi bi-arrows-angle-expand"></i>
+            </div>
           </div>
         </div>
-        <div class="d-flex justify-content-end align-items-center" id="player_right-side">
-          <i class="bi bi-list"></i>
-          <i class="bi bi-pc-display-horizontal"></i>
-          <i class="bi bi-volume-up"></i>
-          <input type="range" class="form-range" id="customRange1">
-          <i class="bi bi-arrows-angle-expand"></i>
-        </div>
+        <audio class="player" src=""></audio>
       </div>
     </div>
-    <audio class="player" src=""></audio>
-  </div>
-  </div>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
-
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ae1de6ea9.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
