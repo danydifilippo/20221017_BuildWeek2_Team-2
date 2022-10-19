@@ -121,7 +121,7 @@ body {
 	padding-bottom: 10px;
 }
 .backPage {
-	background-color: #121212  ;
+	background-color: #121212;
 }
 #searchBar {
 	width: 30%;
@@ -139,11 +139,11 @@ body {
 	width: 18% !important;
 }
 .categoriesCard {
-	margin-right: 2% ;
+	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 18%;
 	img {
-	width: 100% !important
+		width: 100% !important;
 	}
 }
 .preview {
@@ -252,9 +252,14 @@ p {
 	position: absolute;
 	height: 100%;
 	background-color: white;
-	// overflow: hidden;
+	border-radius: 5px;
+	overflow: hidden;
 
-	animation: progress-animation 5s ease-in-out;
+	// animation: progress-animation 30s linear;
+}
+
+.animation_filler-bar {
+	animation: progress-animation 30s linear;
 }
 
 #customRange1 {

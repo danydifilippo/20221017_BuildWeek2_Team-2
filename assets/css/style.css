@@ -11033,7 +11033,12 @@ p {
   position: absolute;
   height: 100%;
   background-color: white;
-  animation: progress-animation 5s ease-in-out;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.animation_filler-bar {
+  animation: progress-animation 30s linear;
 }
 
 #customRange1 {
