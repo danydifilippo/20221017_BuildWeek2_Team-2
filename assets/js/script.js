@@ -325,4 +325,18 @@ function mutedAudio() {
 	}
 }
 
-// creare una funzione che resetta
+// creare una funzione che avvia e stoppa l'audio
+
+function playPausePlayer() {
+	let aux = document.querySelector(".player");
+	if (aux.paused || aux.currentTime === 0 || aux.ended) {
+		aux.src = a;
+		aux.play();
+
+		setStartFillerBar(a);
+		// setNameArtistSong();
+	} else {
+		aux.pause();
+		setPauseFillerBar();
+	}
+}
