@@ -11034,7 +11034,23 @@ p {
   position: absolute;
   height: 100%;
   background-color: white;
-  animation: progress-animation 5s ease-in-out;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#filler_bar-time:hover {
+  background-color: green;
+}
+
+.animation_filler-bar {
+  animation: progress-animation 30s linear;
+}
+
+.started-animation_filler-bar {
+  animation-play-state: running;
+}
+
+.paused-animation_filler-bar {
+  animation-play-state: paused;
 }
 
 #customRange1 {

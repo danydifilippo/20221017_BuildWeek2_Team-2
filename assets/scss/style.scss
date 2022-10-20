@@ -121,7 +121,7 @@ body {
 	padding-bottom: 10px;
 }
 .backPage {
-	background-color: #121212  ;
+	background-color: #121212;
 }
 #searchBar {
 	width: 30%;
@@ -140,11 +140,11 @@ body {
 	min-width: 180px;
 }
 .categoriesCard {
-	margin-right: 2% ;
+	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 18%;
 	img {
-	width: 100% !important
+		width: 100% !important;
 	}
 }
 .preview {
@@ -253,9 +253,24 @@ p {
 	position: absolute;
 	height: 100%;
 	background-color: white;
-	// overflow: hidden;
+	border-radius: 5px;
+	overflow: hidden;
+	&:hover {
+		background-color: green;
+	}
+	// animation: progress-animation 30s linear;
+}
 
-	animation: progress-animation 5s ease-in-out;
+.animation_filler-bar {
+	animation: progress-animation 30s linear;
+}
+
+.started-animation_filler-bar {
+	animation-play-state: running;
+}
+
+.paused-animation_filler-bar {
+	animation-play-state: paused;
 }
 
 #customRange1 {
