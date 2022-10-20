@@ -11166,3 +11166,28 @@ i:hover {
     width: 100%;
   }
 }
+#artistPage {
+  margin-bottom: 5em;
+}
+#artistPage #headArtist #imgBox {
+  height: 50em;
+}
+#artistPage #headArtist #imgBox img {
+  width: 100%;
+}
+#artistPage #artistMain #artistSongs img {
+  width: 50px;
+  height: 50px;
+}
+#artistPage #artistMain td, #artistPage #artistMain th {
+  vertical-align: middle;
+  border-bottom-width: 0;
+  text-align: start;
+}
+#artistPage #artistMain th {
+  text-align: center;
+}
+#artistPage #artistMain #discography {
+  display: flex;
+  gap: 20px;
+}
