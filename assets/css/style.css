@@ -11014,6 +11014,9 @@ p {
 #controls_player {
   font-size: 1.7rem;
   position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 #filled-bar {
@@ -11065,6 +11068,7 @@ p {
 
 #btn_play-pause--audio {
   color: white;
+  font-size: 2.2rem;
 }
 
 i:hover {
@@ -11195,7 +11199,8 @@ i:hover {
   width: 50px;
   height: 50px;
 }
-#artistPage #artistMain td, #artistPage #artistMain th {
+#artistPage #artistMain td,
+#artistPage #artistMain th {
   vertical-align: middle;
   border-bottom-width: 0;
   text-align: start;

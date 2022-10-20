@@ -233,6 +233,9 @@ p {
 #controls_player {
 	font-size: 1.7rem;
 	position: relative;
+	display: flex;
+	align-items: center;
+	align-content: center;
 }
 
 #filled-bar {
@@ -285,6 +288,7 @@ p {
 
 #btn_play-pause--audio {
 	color: white;
+	font-size: 2.2rem;
 }
 
 i:hover {
@@ -420,26 +424,24 @@ i:hover {
 	}
 }
 
-#artistPage{
+#artistPage {
 	margin-bottom: 5em;
-	#headArtist{
-		
-			#imgBox {
-				height: 50em;
-				img{
-					width: 100%;
-				}
+	#headArtist {
+		#imgBox {
+			height: 50em;
+			img {
+				width: 100%;
 			}
-
 		}
+	}
 
-	#artistMain{
-	
+	#artistMain {
 		#artistSongs img {
 			width: 50px;
 			height: 50px;
 		}
-		td, th{
+		td,
+		th {
 			vertical-align: middle;
 			border-bottom-width: 0;
 			text-align: start;
@@ -453,4 +455,3 @@ i:hover {
 		}
 	}
 }
-
