@@ -13,17 +13,17 @@
     <div id="main">
       <div id="app" class="row m-0">
         <div class="bg-black aside text-white">
-          <img id="logo" class="mt-3" src="./assets/img/Spotify_Logo_RGB_White.png" alt="">
+          <img id="logo" class="mt-3" src="./assets/img/Spotify_Logo_RGB_White.png" alt="" />
           <ul class="pt-3">
             <li class="text-white"><i class="bi bi-three-dots"></i></li>
             <li>
-              <a href="./index.html" class="fw-bold "><i class="bi bi-house-door"></i> Home</a>
+              <a href="" class="fw-bold"><i class="bi bi-house-door"></i> Home</a>
             </li>
             <li>
-              <a href="" class="fw-bold "><i class="bi bi-search"></i> Search</a>
+              <a href="" class="fw-bold" id="search"><i class="bi bi-search"></i> Search</a>
             </li>
             <li class="mb-5">
-              <a href="" class="fw-bold "><i class="bi bi-collection"></i> Your Library</a>
+              <a href="" class="fw-bold"><i class="bi bi-collection"></i> Your Library</a>
             </li>
             <li><i class="bi bi-plus-square-fill"></i> Create Playlist</li>
             <li><i id="like" class="bi bi-chat-left-heart-fill"></i> Liked Songs</li>
@@ -39,81 +39,389 @@
           <p class="pb-3">Fuck Fedez</p>
         </div>
         <div id="splashPage" class="backPage m-0 p-0">
-         <div id="artistPage" class="d-none">
-            <div id="headArtist">
+          <div id="Homepage" class="d-block">
+            <div id="hero">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4" id="imgHero"></div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5>Album</h5>
+                      <h1 class="card-title" id="cardTitle"></h1>
+                      <p class="card-text" id="cardArtist"></p>
+                      <p class="card-text">Listen the latest <span id="cardtext"></span>'s single</p>
+                      <div id="playSaveBtn"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          <div id="artistMain">
-           <div id="follow"></div>
-             <div>
-              <h2>Popular</h2>
-               <table class="table text-white">
-                <tbody id="artistSongs" class="mb-5">
-                </tbody>
-               </table>
-             </div>
-             <h2>Discography</h2>
-             <div id="discography">
-             </div>
-             <div id="feature">
-             </div>
-             <h2>About</h2>
-             <div id="about"></div>
-           </div>
-          </div> 
-          <div id="searchPage">
-            <form class="d-flex align-items-center mt-4 " role="search">
-              <div class="arrow"><a  class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a></div>
-              <div class="arrow"><a  class="text-white" href=""><i class="fa-solid fa-chevron-right arrow-btn"></i></a></div>
-              <input class="form-control me-2" type="search" placeholder="What do you want to listen to?" aria-label="Search" id="searchBar" />
-              <button class="btn btn-outline-success" type="reset" onclick="searchArtist()">Search</button>
-            </form>
-            <div id="artistFolder" class="backPage text-white">
-              <h3 class="fs-4 headings">Artists</h3>
-              <div id="artists" class="backPage"></div>
+            <div id="homeMain">
+              <div class="container d-flex" id="rows">
+                <div class="card mb-3"">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="" class="img-fluid rounded-start" alt="cover small" />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h3 class="card-title">Artist</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="albumFolder" class="backPage text-white">
-              <h3 class="fs-4 headings">Albums</h3>
-              <div id="albums" class="backPage"></div>
             </div>
-            <h3 class="fs-4 headings">Categories</h3>
-             <div id="categories" class="d-flex flex-wrap p-2">
-              <div class="categoriesCard"><img src="./assets/img/latin.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/charts.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/dance.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/hiphop.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/liveevents.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/podcast.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/foryou.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/pop.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/rock.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/chill.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/class.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/decades.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/country.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/discover.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/fcus.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/gaming.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/home.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/indie.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/jazz.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/k-p.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/metal.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/mood.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/newrel.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/party.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/sanremo.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/punk.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/r&b.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/raggae.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/romance.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/sleep.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/soul.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/summer.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/trending.PNG" alt="" /></div>
-              <div class="categoriesCard"><img src="./assets/img/workout.PNG" alt="" /></div>
-              
+            <h2>More of what you like</h2>
+            <div class="homeContainers">
+              <div class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+              </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
             </div>
-           </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+            </div>
+            <h2>Made for you</h2>
+            <div class="homeContainers">
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+              <div  class="card border-0 resultCard">
+                <div class="position-relative">
+                <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+                <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title text-white">${music[i].artist.name}</h5>
+                <h6>Artists</h6>
+                </div>
+              </div>
+            </div>
+            <h2>Podcast about economy and finance</h2>
+            <div class="homeContainers">
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+            </div>
+            <h2>Recommended radio</h2>
+            <div class="homeContainers">
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+              <div  class="card border-0 resultCard">
+              <div class="position-relative">
+              <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
+              <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+              </div>
+              <div class="card-body">
+              <h5 class="card-title text-white">${music[i].artist.name}</h5>
+              <h6>Artists</h6>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div id="albumPage" class="d-none">
+            <div id="headAlbum"></div>
+            <div id="listen"></div>
+            <div id="songsList"></div>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Title</th>
+                  <th scope="col"><img src="./assets/img/watch.png" alt="orologio" id="watch"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+            <div id="artistPage" class="d-none">
+              <div id="headArtist"></div>
+              <div id="artistMain">
+                <div id="follow"></div>
+                <div>
+                  <h2>Popular</h2>
+                  <table class="table text-white">
+                    <tbody id="artistSongs" class="mb-5"></tbody>
+                  </table>
+                </div>
+                <h2>Discography</h2>
+                <div id="discography"></div>
+                <div id="feature"></div>
+                <h2>About</h2>
+                <div id="about"></div>
+              </div>
+            </div>
+            <div id="searchPage" class="d-none">
+              <form class="d-flex align-items-center mt-4" role="search">
+                <div class="arrow">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a>
+                </div>
+                <div class="arrow">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-right arrow-btn"></i></a>
+                </div>
+                <input class="form-control me-2" type="text" placeholder="What do you want to listen to?" id="searchBar" onkeydown="searchArtist(event)" />
+              </form>
+              <div id="artistFolder" class="backPage text-white">
+                <h3 class="fs-4 headings">Artists</h3>
+                <div id="artists" class="backPage"></div>
+              </div>
+              <div id="albumFolder" class="backPage text-white">
+                <h3 class="fs-4 headings">Albums</h3>
+                <div id="albums" class="backPage"></div>
+              </div>
+              <h3 class="fs-4 headings">Categories</h3>
+              <div id="categories" class="d-flex flex-wrap p-2">
+                <div class="categoriesCard"><img src="./assets/img/latin.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/charts.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/dance.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/hiphop.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/liveevents.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/podcast.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/foryou.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/pop.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/rock.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/chill.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/class.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/decades.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/country.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/discover.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/fcus.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/gaming.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/home.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/indie.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/jazz.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/k-p.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/metal.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/mood.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/newrel.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/party.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/sanremo.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/punk.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/r&b.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/raggae.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/romance.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/sleep.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/soul.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/summer.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/trending.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/workout.PNG" alt="" /></div>
+              </div>
+            </div>
           </div>
           <div class="p-0 bg-black aside">
             <div class="d-flex justify-content-between pt-3 px-3 w-100">
@@ -216,25 +524,22 @@
           <div class="d-flex justify-content-between align-items-center position-sticky bottom-0" id="player-spotify">
             <div class="d-flex justify-content-around">
               <div>
-                <img id="cover-player" src="./assets/img/logo-player.png" alt="">
+                <img id="cover-player" src="./assets/img/logo-player.png" alt="" />
               </div>
               <div id="text-player">
                 <h4 id="title-song">Forza Roma!</h4>
                 <p id="sub-test_player">Lorenzo Pellegrini</p>
               </div>
-    
+
               <button id="heart-player" onclick="selectedHeart()">
                 <i class="bi bi-heart d-flex" id="heart"></i>
                 <i class="bi bi-heart-fill d-none" id="heart-fill"></i>
               </button>
-    
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center">
-    
               <div id="controls_player">
-                <div id="modal-placeholder" class="d-none">
-                  <p><span id="replace-txt-added" class="d-none">Aggiunto ai</span><span id="replace-txt-removed"
-                      class="">Rimosso dai</span> brani che ti piacciono</p>
+                <div id="modal-placeholder" class="d-none"> 
+                  <p><span id="replace-txt-added" class="d-none">Added to</span><span id="replace-txt-removed" class="">Removed from</span> liked songs</p>
                 </div>
                 <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-shuffle"></i></button>
                 <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-skip-start-fill"></i></button>
@@ -245,22 +550,21 @@
                 <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-skip-end-fill"></i></button>
                 <button onclick="selectedBtnAudioColorizeGreen(this)"><i class="bi bi-repeat"></i></button>
               </div>
-    
+
               <div id="filler-bar">
                 <span id="progress-time">0:00</span>
-    
+
                 <span id="container_filler-bar">
                   <span id="filler_bar-time"></span>
                 </span>
-    
+
                 <span id="duration-time">0:30</span>
               </div>
             </div>
             <div class="d-flex justify-content-end align-items-center" id="player_right-side">
-    
               <button><i class="bi bi-mic"></i></button>
               <button><i class="bi bi-list"></i></button>
-    
+
               <div>
                 <div class="d-none" id="modal_control-device">
                   <div id="current_device">
@@ -268,61 +572,58 @@
                       <i class="bi bi-laptop"></i>
                     </div>
                     <div>
-                      <h3>Dispositivo Corrente</h3>
-                      <p>Questo computer</p>
+                      <h3>Current device</h3>
+                      <p>This computer</p>
                     </div>
                   </div>
                   <div id="error_device">
-                    <h4>Nessun altro dispositivo trovato</h4>
+                    <h4>No other device found</h4>
                   </div>
                   <div id="control_wifi">
                     <div><i class="bi bi-wifi"></i></div>
                     <div>
-                      <h4>Controlla il Wi-Fi</h4>
-                      <p>Connetti i dispositivi in uso alla stessa rete Wi-Fi.</p>
+                      <h4>check your WiFi</h4>
+                      <p>Connect the devices you are using to the same WiFi.</p>
                     </div>
                   </div>
                   <div id="control_another-device">
                     <div><i class="bi bi-pc-display"></i></div>
                     <div>
-                      <h4>Riproduci da un altro dispositivo</h4>
-                      <p>Verrà visualizzato automaticamente qui.</p>
+                      <h4>Play from an other device.</h4>
+                      <p>It will automatically appear here.</p>
                     </div>
                   </div>
                   <div id="control_speaker">
                     <div><i class="bi bi-power"></i></div>
                     <div>
-                      <h4>Riavvia l'altoparlante</h4>
-                      <p>Oppure segui le istruzioni di configurazione se si tratta di un nuovo dispositivo</p>
+                      <h4>Restart your speaker</h4>
+                      <p>Or follow setup instructions if it's a new device</p>
                     </div>
                   </div>
                   <div id="modal-sub">
-                    <h4>Non vedi il dispositivo?</h4>
+                    <h4>Don't see your device?</h4>
                     <i class="bi bi-box-arrow-up-right"></i>
                   </div>
-    
+
                   <div id="square-rotate"></div>
                 </div>
                 <button><i class="bi bi-pc-display-horizontal" onclick="selectedModalControlDevic()"></i></button>
               </div>
-    
+
               <button id="btn_mute-audio" onclick="selectedBtnMuteAudio(), mutedAudio()">
                 <i class="bi bi-volume-up" id="btn_volume-up"></i>
                 <i class="bi bi-volume-mute d-none" id="btn_volume-mute"></i>
               </button>
-              <input type="range" class="form-range" id="volume" max="1" min="0" step="0.01"
-                onchange="changeVolume(this.value)">
+              <input type="range" class="form-range" id="volume" max="1" min="0" step="0.01" onchange="changeVolume(this.value)" />
               <button><i class="bi bi-arrows-angle-expand"></i></button>
             </div>
           </div>
-    
         </div>
         <audio class="player" src=""></audio>
       </div>
-      </div>
-      <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://kit.fontawesome.com/5ae1de6ea9.js" crossorigin="anonymous"></script>
-      <script src="./assets/js/script.js"></script>
-    </body>
-    
-    </html>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ae1de6ea9.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

@@ -420,18 +420,6 @@ i:hover {
 	}
 }
 
-#artistPage{
-	margin-bottom: 5em;
-	#headArtist{
-		
-			#imgBox {
-				height: 50em;
-				img{
-					width: 100%;
-				}
-			}
-
-		}
 
 	#artistMain{
 	
@@ -452,5 +440,13 @@ i:hover {
 			gap: 20px;
 		}
 	}
+
+.homeContainers {
+	display: flex;
+}
+
+#watch{
+	background-color: transparent;
+	width: 20px;
 }
 
