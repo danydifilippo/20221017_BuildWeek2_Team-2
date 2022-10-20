@@ -12,7 +12,7 @@ async function showApi(n) {
 		showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
             <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}','${music[i].preview}'); getAudioObj('${music[i].preview}')">
             </div>
             <div class="card-body">
             <h5 class="card-title text-white">${music[i].artist.name}</h5>
@@ -155,6 +155,7 @@ for (let i = 0; i < arrayArtists.length; i++) {
 }
 
 // PLAYER
+let clickedHeart = false;
 
 function selectedHeart() {
 	let btnHeart = document.getElementById("heart");
@@ -162,6 +163,8 @@ function selectedHeart() {
 	let modalPlaceholder = document.getElementById("modal-placeholder");
 	let replaceTxtAdded = document.querySelector("#replace-txt-added");
 	let replaceTxtRemoved = document.querySelector("#replace-txt-removed");
+
+	!clickedHeart;
 
 	btnHeart.classList.toggle("d-none");
 	btnHeartFill.classList.toggle("d-none");
@@ -281,7 +284,18 @@ function setPauseFillerBar() {
 
 // ora devi fare in modo che il titolo e l'artista cambi di testo al click
 
-function setNameArtistSong(artist, song, coverImg) {
+class SongsFavorite {
+	constructor(artist, song, coverImg, audioPreview) {
+		this.artist = artist;
+		this.song = song;
+		this.coverImg = coverImg;
+		this.audioPreview = audioPreview;
+	}
+}
+
+let arrFavoriteSongs = [];
+
+function setNameArtistSong(artist, song, coverImg, audioPreview) {
 	console.log(artist, song, coverImg);
 
 	let coverImgPlayer = document.querySelector("#cover-player");
@@ -291,6 +305,14 @@ function setNameArtistSong(artist, song, coverImg) {
 	coverImgPlayer.src = `${coverImg}`;
 	nameArtistPlayer.innerHTML = `${artist}`;
 	titleSongPlayer.innerHTML = `${song}`;
+
+	addTracksTail(artist, song, coverImg, audioPreview);
+
+	// 	arrFavoriteSongs.push(
+	// 		new SongsFavorite(artist, song, coverImg, audioPreview)
+	// 	);
+
+	// 	console.log(arrFavoriteSongs);
 }
 
 let newObj;
@@ -339,4 +361,30 @@ function playPausePlayer() {
 		aux.pause();
 		setPauseFillerBar();
 	}
+}
+
+// crea funzione coda
+// al click del cuoricino, aggiunge in un array il brano selezionato
+// carica nella sezione html CODA il brano selezionato
+
+function addTracksTail(artist, song, coverImg, audioPreview) {
+	console.log("Avviata la addTracksTail");
+
+	arrFavoriteSongs.push(
+		new SongsFavorite(artist, song, coverImg, audioPreview)
+	);
+
+	console.log(arrFavoriteSongs);
+	// else {
+	// 		arrFavoriteSongs.pop();
+	// 		console.log(arrFavoriteSongs);
+	// 	}
+}
+
+function showFavoriteSongs() {
+	let splashPage = document.querySelector("#splashPage");
+	let favoriteSongsPage = document.querySelector("#tracksTail");
+
+	splashPage.classList.toggle("d-none");
+	favoriteSongsPage.classList.toggle("d-none");
 }

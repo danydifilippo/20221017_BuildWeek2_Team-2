@@ -11212,3 +11212,33 @@ i:hover {
   display: flex;
   gap: 20px;
 }
+
+body #tracksTail {
+  padding: 2rem 3rem !important;
+}
+body .row-tracks {
+  display: flex;
+}
+body .songs {
+  font-size: 1rem;
+  gap: 35px;
+  margin-bottom: 1rem;
+}
+body .heart_time {
+  display: flex;
+}
+body .tail-left-side {
+  display: flex;
+}
+body .number-song {
+  margin: 0;
+}
+body .txt-color-grey {
+  color: grey;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+body .tail-coverImg {
+  width: 45px;
+  height: 47px;
+}
