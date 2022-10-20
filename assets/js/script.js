@@ -109,13 +109,14 @@ function artistPage(a) {
 }
 
 // funzione per play
+
 function playA(a) {
 	let aux = document.querySelector(".player");
 	if (aux.paused || aux.currentTime === 0 || aux.ended) {
 		aux.src = a;
 		aux.play();
 
-		setStartFillerBar();
+		setStartFillerBar(a);
 		// setNameArtistSong();
 	} else {
 		aux.pause();
@@ -221,40 +222,25 @@ let stopAudioPreview = false;
 let clearIntervalID = 0;
 let elementSrcAudio;
 
-function setStartFillerBar() {
+function setStartFillerBar(previewAudio) {
 	const progressTimeElement = document.querySelector("#progress-time");
 	const fillerBarElement = document.querySelector("#filler_bar-time");
 	const audioPlayer = document.querySelector(".player");
 
-	console.log(
-		"Per controllare se al click riesco a resettare il filler bar",
-		audioPlayer.src
-	);
-
-	// elementSrcAudio = audioPlayer.src;
-
-	// console.log(progressTimeElement, fillerBarElement);
-
-	// console.log(
-	// 	fillerBarElement.className.includes("paused-animation_filler-bar")
-	// );
-
 	fillerBarElement.classList.add("animation_filler-bar");
+	console.log("preview Audio", previewAudio);
 
-	console.log(elementSrcAudio != undefined);
-	// console.log(
-	// 	String(elementSrcAudio) === String(audioPlayer.src) &&
-	// 		elementSrcAudio !== undefined
-	// );
-
-	if (elementSrcAudio != audioPlayer.src && elementSrcAudio != undefined) {
+	// logica if che permette di resettare sia l'animazione che il cronometro
+	// cliccando brani diversi
+	if (elementSrcAudio !== previewAudio && elementSrcAudio !== undefined) {
 		fillerBarElement.classList.remove("animation_filler-bar");
+		void fillerBarElement.offsetWidth;
 		fillerBarElement.classList.add("animation_filler-bar");
+		progressTimeElement.innerHTML = `0:00`;
+		seconds = 1;
 	}
 
-	console.log("iniziale elementSrcAudio", elementSrcAudio);
-	elementSrcAudio = audioPlayer.src;
-	console.log("elementSrcAudio", elementSrcAudio);
+	elementSrcAudio = previewAudio;
 
 	const changeSeconds = setInterval(() => {
 		if (seconds < 10) {
