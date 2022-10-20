@@ -213,7 +213,7 @@
             <img id="cover-player" src="./assets/img/logo-player.png" alt="">
           </div>
           <div id="text-player">
-            <h4>Forza Roma!</h4>
+            <h4 id="title-song">Forza Roma!</h4>
             <p id="sub-test_player">Lorenzo Pellegrini</p>
           </div>
 
@@ -301,7 +301,8 @@
           </div>
 
           <button><i class="bi bi-volume-up"></i></button>
-          <input type="range" class="form-range" id="customRange1">
+          <input type="range" class="form-range" id="volume" max="1" min="0" step="0.01"
+            onchange="changeVolume(this.value)">
           <button><i class="bi bi-arrows-angle-expand"></i></button>
         </div>
       </div>

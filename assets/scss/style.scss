@@ -254,12 +254,22 @@ p {
 	background-color: white;
 	border-radius: 5px;
 	overflow: hidden;
-
+	&:hover {
+		background-color: green;
+	}
 	// animation: progress-animation 30s linear;
 }
 
 .animation_filler-bar {
 	animation: progress-animation 30s linear;
+}
+
+.started-animation_filler-bar {
+	animation-play-state: running;
+}
+
+.paused-animation_filler-bar {
+	animation-play-state: paused;
 }
 
 #customRange1 {

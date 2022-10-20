@@ -10,7 +10,7 @@ async function showApi(n) {
 		showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
             <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}')">
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
             </div>
             <div class="card-body">
             <h5 class="card-title text-white">${music[i].artist.name}</h5>
@@ -24,7 +24,7 @@ async function showApi(n) {
 		showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
         <img src="${music[i].album.cover_medium}" class="card-img-top" alt="album">  
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}')">
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist}')">
         </div>
         <div class="card-body">
         <h5 class="card-title text-white">${music[i].album.title}</h5>
@@ -83,9 +83,12 @@ function playA(a) {
 	if (aux.paused || aux.currentTime === 0 || aux.ended) {
 		aux.src = a;
 		aux.play();
-		setFillerBar();
+
+		setStartFillerBar();
+		// setNameArtistSong();
 	} else {
 		aux.pause();
+		setPauseFillerBar();
 	}
 }
 
@@ -204,14 +207,19 @@ function selectedModalControlDevic() {
 
 let seconds = 1;
 let stopAudioPreview = false;
+let clearIntervalID = 0;
 
-function setFillerBar() {
+function setStartFillerBar() {
 	const progressTimeElement = document.querySelector("#progress-time");
 	const fillerBarElement = document.querySelector("#filler_bar-time");
 
 	console.log(progressTimeElement, fillerBarElement);
 
-	fillerBarElement.classList.toggle("animation_filler-bar");
+	console.log(
+		fillerBarElement.className.includes("paused-animation_filler-bar")
+	);
+
+	fillerBarElement.classList.add("animation_filler-bar");
 
 	const changeSeconds = setInterval(() => {
 		if (seconds < 10) {
@@ -221,11 +229,71 @@ function setFillerBar() {
 		progressTimeElement.innerHTML = `0:${seconds}`;
 		seconds++;
 
+		clearIntervalID = changeSeconds;
+
 		if (seconds === 31) {
 			clearInterval(changeSeconds);
+			seconds = 1;
 		}
 		// console.log(typeof progressTimeElement.innerHTML);
 	}, 1000);
 
-	// ora devi fare in modo che il titolo e l'artista cambi di testo al click
+	if (fillerBarElement.className.includes("paused-animation_filler-bar")) {
+		fillerBarElement.classList.remove("paused-animation_filler-bar");
+	}
+}
+
+// Devi fare in modo che l'animazione e il tempo si fermino
+
+// L'animazione ora si ferma, il tempo no. Devo trovare un modo per passare
+// l'ID del clearInterval in modo dinamico
+
+function setPauseFillerBar() {
+	let fillerBarElement = document.querySelector("#filler_bar-time");
+
+	fillerBarElement.classList.toggle("paused-animation_filler-bar");
+
+	console.log(clearIntervalID);
+
+	clearInterval(clearIntervalID);
+}
+
+// ora devi fare in modo che il titolo e l'artista cambi di testo al click
+
+function setNameArtistSong(artist, song, coverImg) {
+	console.log(artist, song, coverImg);
+
+	let coverImgPlayer = document.querySelector("#cover-player");
+	let nameArtistPlayer = document.querySelector("#sub-test_player");
+	let titleSongPlayer = document.querySelector("#title-song");
+
+	coverImgPlayer.src = `${coverImg}`;
+	nameArtistPlayer.innerHTML = `${artist}`;
+	titleSongPlayer.innerHTML = `${song}`;
+}
+
+let newObj;
+
+// Funzione che recupera l'url dell'audio cliccato
+function getAudioObj(audioPreview) {
+	let audioObj = new Audio(audioPreview);
+	console.log(audioObj);
+
+	newObj = audioObj;
+}
+
+// Funzione che cambia il volume dell'audio cliccato
+function changeVolume(rangeValue) {
+	// console.log("newObj", newObj);
+
+	// let urlAudio = newObj.src;
+
+	// console.log("urlAudio", urlAudio);
+
+	// let urlAudioObj = new Audio(urlAudio);
+
+	let playerElement = document.querySelector(".player");
+	playerElement.volume = rangeValue;
+
+	// newObj.setVolume(rangeValue);
 }
