@@ -186,6 +186,14 @@ function selectedPlayPause() {
 	btnPause.classList.toggle("d-none");
 }
 
+function selectedBtnMuteAudio() {
+	let btnVolumeUp = document.querySelector("#btn_volume-up");
+	let btnVolumeMute = document.querySelector("#btn_volume-mute");
+
+	btnVolumeMute.classList.toggle("d-none");
+	btnVolumeUp.classList.toggle("d-none");
+}
+
 function selectedBtnAudioColorizeGreen(event) {
 	console.log(event);
 	let btnSelected = event.querySelector(".bi");
@@ -296,4 +304,20 @@ function changeVolume(rangeValue) {
 	playerElement.volume = rangeValue;
 
 	// newObj.setVolume(rangeValue);
+}
+
+// Funzione che al click muta e smuta l'audio
+let audioState = false;
+function mutedAudio() {
+	let playerElement = document.querySelector(".player");
+
+	if (audioState === false) {
+		playerElement.muted = true;
+		audioState = true;
+		console.log(audioState);
+	} else {
+		playerElement.muted = false;
+		audioState = false;
+		console.log(audioState);
+	}
 }
