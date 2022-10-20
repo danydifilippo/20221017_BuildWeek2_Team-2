@@ -403,3 +403,38 @@ i:hover {
 		width: 100%;
 	}
 }
+
+#artistPage{
+	margin-bottom: 5em;
+	#headArtist{
+		
+			#imgBox {
+				height: 50em;
+				img{
+					width: 100%;
+				}
+			}
+
+		}
+
+	#artistMain{
+	
+		#artistSongs img {
+			width: 50px;
+			height: 50px;
+		}
+		td, th{
+			vertical-align: middle;
+			border-bottom-width: 0;
+			text-align: start;
+		}
+		th {
+			text-align: center;
+		}
+		#discography {
+			display: flex;
+			gap: 20px;
+		}
+	}
+}
+
