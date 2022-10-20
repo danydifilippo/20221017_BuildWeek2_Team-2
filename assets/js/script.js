@@ -220,12 +220,15 @@ let clearIntervalID = 0;
 function setStartFillerBar() {
 	const progressTimeElement = document.querySelector("#progress-time");
 	const fillerBarElement = document.querySelector("#filler_bar-time");
+	const audioPlayer = document.querySelector(".player");
 
-	console.log(progressTimeElement, fillerBarElement);
+	console.log(audioPlayer);
 
-	console.log(
-		fillerBarElement.className.includes("paused-animation_filler-bar")
-	);
+	// console.log(progressTimeElement, fillerBarElement);
+
+	// console.log(
+	// 	fillerBarElement.className.includes("paused-animation_filler-bar")
+	// );
 
 	fillerBarElement.classList.add("animation_filler-bar");
 
@@ -253,8 +256,8 @@ function setStartFillerBar() {
 
 // Devi fare in modo che l'animazione e il tempo si fermino
 
-// L'animazione ora si ferma, il tempo no. Devo trovare un modo per passare
-// l'ID del clearInterval in modo dinamico
+// L'animazione ora si deve fermare, senza toccare il tempo.
+// Devo trovare un modo per passare l'ID del clearInterval in modo dinamico
 
 function setPauseFillerBar() {
 	let fillerBarElement = document.querySelector("#filler_bar-time");
@@ -292,18 +295,8 @@ function getAudioObj(audioPreview) {
 
 // Funzione che cambia il volume dell'audio cliccato
 function changeVolume(rangeValue) {
-	// console.log("newObj", newObj);
-
-	// let urlAudio = newObj.src;
-
-	// console.log("urlAudio", urlAudio);
-
-	// let urlAudioObj = new Audio(urlAudio);
-
 	let playerElement = document.querySelector(".player");
 	playerElement.volume = rangeValue;
-
-	// newObj.setVolume(rangeValue);
 }
 
 // Funzione che al click muta e smuta l'audio
@@ -321,3 +314,5 @@ function mutedAudio() {
 		console.log(audioState);
 	}
 }
+
+// creare una funzione che resetta
