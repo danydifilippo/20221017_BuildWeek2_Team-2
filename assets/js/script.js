@@ -85,7 +85,7 @@ async function returnApi(newA) {
     onPageArtist.classList.remove("d-none");
     document.getElementById("searchPage").classList.add("d-none");
     document.getElementById("albumPage").classList.add("d-none");
-    document.getElementById("HomePage").classList.add("d-none");
+    document.getElementById("Homepage").classList.add("d-none");
     let showArtist = document.getElementById("headArtist");
     showArtist.style.backgroundImage = `url(${artista[i].artist.picture_xl})`;
     showArtist.innerHTML = `
@@ -114,7 +114,7 @@ async function returnApi(newA) {
       let anno = Number(Math.floor(Math.random() * 20 + 2000));
       showDisco.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">
     <div class="position-relative">
-    <img src="${artista[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${music[i].artist.name}')">  
+    <img src="${artista[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${artista[i].artist.name}')">  
         <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${artista[i].preview}')">
     </div>
     <div class="card-body">
@@ -176,7 +176,7 @@ async function returnAlbumApi(newA) {
       more.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">
   <div class="position-relative">
   <img src="${album[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${album[i].artist.name}')">  
-      <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${artista[i].preview}')">
+      <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${album[i].preview}')">
   </div>
   <div class="card-body">
   <h5 class="card-title text-white">${album[i].album.title}</h5>
