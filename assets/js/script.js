@@ -456,45 +456,4 @@ function showFavoriteSongs() {
 	          </div>
 		`;
 	});
-
-	//   <div class="row">
-	//     <div class="col">
-
-	//       <h2>Coda</h2>
-
-	//       <p class="txt-color-grey">Stai ascoltando</p>
-
-	//       <div class="row-tracks">
-
-	//         <div class="col">
-	//           <div class="songs d-flex justify-content-left align-items-center">
-	//             <div class="number-song">1</div>
-	//             <div class="favorite_cover-img">
-	//               <img class="tail-coverImg" src="./assets/img/logo-player.png" alt="">
-	//             </div>
-	//             <div class="favorite_artiste-title--txt">
-	//               <h3>Feeling This</h3>
-	//               <p class="txt-color-grey">blink-182</p>
-	//             </div>
-	//           </div>
-	//         </div>
-
-	//         <div class="col">
-	//           <div class="heart_time">
-	//             <p class="txt-color-grey">blink-182</p>
-	//             <div class="hearts">
-	//               <i class="bi bi-heart-fill" id="heart-fill"></i>
-	//               <div class="time">2:53</div>
-	//             </div>
-
-	//           </div>
-	//         </div>
-
-	//       </div>
-
-	//       <!-- <p class="txt-color-grey">Prossimi</p> -->
-
-	//     </div>
-
-	//   </div>
 }
