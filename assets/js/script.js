@@ -155,12 +155,16 @@ async function returnAlbumApi(newA) {
     document.getElementById("artistPage").classList.add("d-none");
     let anno = Number(Math.floor(Math.random() * 20 + 2000));
     let showAlbum = document.getElementById("headAlbum");
-    showAlbum.innerHTML = `<div><p><img src="${album[i].album.cover_medium}" alt="Album"></p></div>
-  <div><h1>${album[i].artist.name}</h1>
-  <p><img src="${album[i].artist.picture_small}" alt="Artista"> ${album[i].artist.name} &#183; ${anno} &#183; 24 songs,<span id="text-gray">49 min 15 sec</span></p></div>`;
+    showAlbum.innerHTML = `<div id="coverContainer"><img id="albumCover" src="${album[i].album.cover_medium}" alt="Album"></div>
+  <div id="albumContent" class="ms-4"><h1 id="albumTitle">${album[i].artist.name}</h1>
+  <p><img class="rounded-circle coverArtist me-2" src="${album[i].artist.picture_small}" alt="Artista"><span class="fw-bold"> ${album[i].artist.name}</span> &#183; ${anno} &#183; 24 songs,<span id="text-gray">49 min 15 sec</span></p></div>`;
     let listen = document.getElementById("listen");
-    listen.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${album[1].preview}')">
-    <img src="./assets/img/heart_spotify.png" width="40px" alt="heart" class="text-white">`;
+    listen.innerHTML += `<div class="d-flex align-items-center mt-3"> 
+    <div class=" albumPreview" onclick="playA('${album[1].preview}')">
+        <i class="bi bi-play-fill"></i>
+        </div>
+      <div id="heart">  
+    <img src="./assets/img/heart_spotify.png"  alt="heart" class="text-white w-100"></div></div>`;
     let songsList = document.getElementById("songsList");
     for (let i = 1; i < album.length; i++) {
       let mn = Number(Math.floor(Math.random() * 3 + 3));
@@ -174,7 +178,7 @@ async function returnAlbumApi(newA) {
   </tr>`;
     }
     let more = document.getElementById("moreAlbum");
-    more.innerHTML += `<h2>More by ${album[i].artist.name}</h2>`;
+    more.innerHTML += `<h2 id="moreBy">More by ${album[i].artist.name}</h2>`;
     for (let i = 0; i < 5; i++) {
       let anno = Number(Math.floor(Math.random() * 20 + 2000));
       more.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">

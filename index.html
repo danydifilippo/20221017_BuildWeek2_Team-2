@@ -349,18 +349,35 @@
           
         
           <div id="albumPage" class="d-none">
-            <div id="headAlbum"></div>
+            <div id="headDiv" class="d-flex px-5 pt-1 mb-2 justify-content-between">
+              <div class="d-flex">
+                <div class="arrow me-3">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a>
+                </div>
+                <div class="arrow">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-right arrow-btn"></i></a>
+                </div>
+              </div>
+              <div id="profileInfo" class="d-flex">
+                <img id="profilePic" src="./assets/img/salv.png" alt="" />
+                <p>Matt.salv</p>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+            <div id="headAlbum" class="d-flex "></div>
             <div id="listen"></div>
-            <div></div>
-            <table class="table table-dark table-hover" id="songsList">
-              <thead>
+            
+            <table class="table text-white table-hover table-borderless mt-4" id="songsList">
+              <thead class="position-relative ">
+                
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Title</th>
                   <th scope="col"><img src="./assets/img/watch.png" alt="orologio" id="watch" /></th>
                 </tr>
+                
               </thead>
-              <tbody></tbody>
+              <tbody class="table-group-divider"></tbody>
             </table>
             <div id="moreAlbum"></div>
           </div>

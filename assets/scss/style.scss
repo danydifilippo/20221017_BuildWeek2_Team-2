@@ -97,6 +97,26 @@ body {
 	padding-left: 5%;
 	padding-bottom: 1%;
 }
+#headAlbum{
+width: 100%;
+justify-content: flex-start;
+}
+#coverContainer {
+	width: 26%;
+	margin-left: 4%;
+}
+#albumContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+#albumTitle {
+	font-size: 6rem;
+	font-weight: bold;
+}
+.coverArtist{
+	width: 40px;
+}
 #about {
 	height: 45vh;
 	background-position:cover;
@@ -123,8 +143,21 @@ body {
 	font-size: 5rem;
 	font-weight: bold;
 }
-
-
+#albumCover {
+	width: 100%;
+	box-shadow: 5px 5px 15px 5px #09090995;
+}
+#moreAlbum {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 95%;
+	margin-inline: auto;
+}
+#moreBy {
+	width: 100%;
+	margin-block: 3%;
+}
 #hero {
 	background-color: transparent;
     	
@@ -295,6 +328,37 @@ body {
 	align-items: center;
 	font-size: 2rem;
 	color: #000000;
+}
+.albumPreview {
+	
+	opacity: 1;
+	background-color: #3fcd52;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: #000000;
+	margin-left: 4%;
+	margin-right: 2%;
+}
+
+#songsList {
+	width: 80%;
+	margin-inline: auto;
+	tr{
+		padding: 0;
+	}
+}
+#heart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
 }
 @keyframes animation {
 	0% {
