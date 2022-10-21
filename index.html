@@ -39,7 +39,7 @@
           <p class="pb-3">Fuck Fedez</p>
         </div>
         <div id="splashPage" class="backPage m-0 p-0">
-          <div id="Homepage" class="d-block">
+          <div id="Homepage" class="d-none">
             <div id="headDiv" class="d-flex px-5 pt-1 mb-2">
               <div class="d-flex">
               <div class="arrow me-3">
@@ -326,6 +326,16 @@
             
 
             <div id="artistPage" class="d-none">
+              <div id="headDiv" class="d-flex px-5 pt-1 mb-2">
+                <div class="d-flex">
+                <div class="arrow me-3">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a>
+                </div>
+                <div class="arrow">
+                  <a class="text-white" href=""><i class="fa-solid fa-chevron-right arrow-btn"></i></a>
+                </div>
+                </div>
+              </div>
               <div id="headArtist"></div>
               <div id="artistMain">
                 <div id="follow"></div>
@@ -342,8 +352,8 @@
                 <div id="about"></div>
               </div>
             </div>
-            <div id="searchPage" class="d-none">
-              <form class="d-flex align-items-center mt-4" role="search">
+            <div id="searchPage" class="d-block">
+              <form class="d-flex align-items-center pt-3 pb-3" role="search">
                 <div class="arrow">
                   <a class="text-white" href=""><i class="fa-solid fa-chevron-left arrow-btn"></i></a>
                 </div>
@@ -396,10 +406,12 @@
                 <div class="categoriesCard"><img src="./assets/img/summer.PNG" alt="" /></div>
                 <div class="categoriesCard"><img src="./assets/img/trending.PNG" alt="" /></div>
                 <div class="categoriesCard"><img src="./assets/img/workout.PNG" alt="" /></div>
+                <div class="categoriesCard"><img src="./assets/img/alter.PNG" alt="" /></div>
               </div>
             </div>
+            <div id="blocker"></div>
           </div>
-          <div class="p-0 bg-black aside">
+          <div class="p-0 bg-black aside right">
             <div class="d-flex justify-content-between pt-3 px-3 w-100">
               <div>
                 <p class="text-white">Friend activity</p>
@@ -413,8 +425,8 @@
                 </div>
                 <div class="ms-3 track">
                   <h3>Evil Meloni</h3>
-                  <p>French tour - Carla Bruni</p>
-                  <p><i class="bi bi-disc"></i> The winner takes it all</p>
+                  <p class="ellipsis">French tour - Carla Bruni</p>
+                  <p class="ellipsis"><i class="bi bi-disc"></i> The winner takes it all</p>
                 </div>
               </div>
               <div class="time me-1">
@@ -428,8 +440,8 @@
                 </div>
                 <div class="ms-3 track">
                   <h3>Howard the duck</h3>
-                  <p>I Grandi Successi - Al Bano e Romina Power</p>
-                  <p><i class="bi bi-disc"></i> Il Ballo del Qua Qua</p>
+                  <p class="ellipsis">I Grandi Successi - Al Bano e Romina Power</p>
+                  <p class="ellipsis"><i class="bi bi-disc"></i> Il Ballo del Qua Qua</p>
                 </div>
               </div>
               <div class="time me-1">
@@ -443,8 +455,8 @@
                 </div>
                 <div class="ms-3 track">
                   <h3>Max Mayfield</h3>
-                  <p>Hounds of Love - Kate Bush</p>
-                  <p><i class="bi bi-disc"></i> Runnin'Up That Hill</p>
+                  <p class="ellipsis">Hounds of Love - Kate Bush</p>
+                  <p class="ellipsis"><i class="bi bi-disc"></i> Runnin'Up That Hill</p>
                 </div>
               </div>
               <div class="time me-1">
@@ -458,8 +470,8 @@
                 </div>
                 <div class="ms-3 track">
                   <h3>Peter Jason Quill</h3>
-                  <p>Awesome Love Mixtape vol.1</p>
-                  <p><i class="bi bi-disc"></i> Come and Get your Love</p>
+                  <p class="ellipsis">Awesome Love Mixtape vol.1</p>
+                  <p class="ellipsis"><i class="bi bi-disc"></i> Come and Get your Love</p>
                 </div>
               </div>
               <div class="time me-1">
@@ -472,8 +484,8 @@
                   <img class="friends" src="./assets/img/Cannavacciuolo.jpg" alt="" />
                 </div>
                 <div class="ms-3 track">
-                  <h3>Antonino Cannavacciuolo</h3>
-                  <p>Povero Gabbiano - Gianni Celeste</p>
+                  <h3 class="ellipsis">Antonino Cannavacciuolo</h3>
+                  <p class="ellipsis">Povero Gabbiano - Gianni Celeste</p>
                   <p><i class="bi bi-disc"></i> Povero Gabbiano</p>
                 </div>
               </div>
@@ -488,8 +500,8 @@
                 </div>
                 <div class="ms-3 track">
                   <h3>Antonio Cassano</h3>
-                  <p>Notti Brave - Carl Brave</p>
-                  <p><i class="bi bi-disc"></i> Chapeau</p>
+                  <p class="ellipsis">Notti Brave - Carl Brave</p>
+                  <p class="ellipsis"><i class="bi bi-disc"></i> Chapeau</p>
                 </div>
               </div>
               <div class="time me-1">

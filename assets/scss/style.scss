@@ -19,6 +19,7 @@ body {
 	overflow-y: hidden;
 	#logo {
 		width: 50%;
+		max-width: 200px;
 	}
 	.aside {
 		width: 17%;
@@ -97,6 +98,11 @@ body {
 }
 #cardTitle:hover {
      text-decoration: underline;	
+}
+.ellipsis {
+	
+	
+	
 }
 .heroBtnGreen {
 	background-color: #2f7f00;
@@ -312,6 +318,9 @@ p {
 }
 .track {
 	height: fit-content;
+	overflow-x: hidden;
+	
+	
 }
 .friends {
 	width: 60px;
@@ -603,3 +612,8 @@ i:hover {
 	width: 20px;
 }
 
+@media screen and (max-width: 1400px  ) {
+	.right {
+		display: none;
+	}
+}

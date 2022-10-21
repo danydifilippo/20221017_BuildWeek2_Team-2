@@ -10794,6 +10794,7 @@ body {
 }
 #main #logo {
   width: 50%;
+  max-width: 200px;
 }
 #main .aside {
   width: 17%;
@@ -11103,6 +11104,7 @@ p {
 
 .track {
   height: fit-content;
+  overflow-x: hidden;
 }
 
 .friends {
@@ -11364,4 +11366,10 @@ i:hover {
 #watch {
   background-color: transparent;
   width: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .right {
+    display: none;
+  }
 }
