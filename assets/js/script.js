@@ -10,7 +10,7 @@ async function showApi(n) {
   // Homepage
 
   let hero = document.getElementById("imgHero");
-  hero.innerHTML = `<img src="${music[i].album.cover_medium}" class="img-fluid rounded-start" alt="cover">`;
+  hero.innerHTML = `<img onclick="albumPage('${music[i].artist.name}')" src="${music[i].album.cover_medium}" class="img-fluid rounded-start" alt="cover">`;
   let cardtitle = document.getElementById("cardTitle");
   cardtitle.innerHTML = `${music[i].album.title}`;
   let cardArtist = document.getElementById("cardArtist");
@@ -21,7 +21,7 @@ async function showApi(n) {
   playSaveBtn.innerHTML = `<button class="heroBtnGreen me-3" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">Play</button>
   <button class="heroBtnTran" onclick="albumPage('${music[i].artist.name}')">Save</button>`;
   let row1 = document.getElementById("rows");
-  row1.innerHTML += `<div class="card mb-3 homeCard">
+  row1.innerHTML += `<div class="card mb-3 homeCard" onclick="artistPage('${music[i].artist.name}')">
   <div class="cardContent">
     <div>
       <img src="${music[i].album.cover_small}" class="w-100 rounded-start homeImg" alt="cover small">

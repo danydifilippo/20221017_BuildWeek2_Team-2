@@ -11035,6 +11035,14 @@ body {
   width: 100% !important;
 }
 
+#categories {
+  background-color: #121212;
+}
+
+.bHeading {
+  background-color: #121212;
+}
+
 .preview {
   bottom: 3px;
   right: 10px;
