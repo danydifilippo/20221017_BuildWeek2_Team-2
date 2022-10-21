@@ -8,11 +8,25 @@ async function showApi(n) {
 	i = Number(Math.floor(Math.random() * 25));
 
 	function card() {
+		let stringTitleAlbum = String(music[i].album.title);
+		let stringMusicTitle = String(music[i].artist.name);
+		// indexOf();
+		// replace();
+		if (stringTitleAlbum.indexOf("'") !== -1) {
+			stringTitleAlbum.replace("'", " ");
+		}
+
+		if (stringMusicTitle.indexOf("'") !== -1) {
+			stringMusicTitle.replace("'", " ");
+		}
+
+		console.log(stringTitleAlbum);
+
 		let showcard = document.getElementById("artists");
 		showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
             <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}','${music[i].preview}'); getAudioObj('${music[i].preview}')">
+            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${stringMusicTitle}', '${music[i].album.cover_medium}','${music[i].preview}', '${stringTitleAlbum}'); getAudioObj('${music[i].preview}')">
             </div>
             <div class="card-body">
             <h5 class="card-title text-white">${music[i].artist.name}</h5>
@@ -285,17 +299,18 @@ function setPauseFillerBar() {
 // ora devi fare in modo che il titolo e l'artista cambi di testo al click
 
 class SongsFavorite {
-	constructor(artist, song, coverImg, audioPreview) {
+	constructor(artist, song, coverImg, audioPreview, titleAlbum) {
 		this.artist = artist;
 		this.song = song;
 		this.coverImg = coverImg;
 		this.audioPreview = audioPreview;
+		this.titleAlbum = titleAlbum;
 	}
 }
 
 let arrFavoriteSongs = [];
 
-function setNameArtistSong(artist, song, coverImg, audioPreview) {
+function setNameArtistSong(artist, song, coverImg, audioPreview, titleAlbum) {
 	console.log(artist, song, coverImg);
 
 	let coverImgPlayer = document.querySelector("#cover-player");
@@ -306,7 +321,7 @@ function setNameArtistSong(artist, song, coverImg, audioPreview) {
 	nameArtistPlayer.innerHTML = `${artist}`;
 	titleSongPlayer.innerHTML = `${song}`;
 
-	addTracksTail(artist, song, coverImg, audioPreview);
+	addTracksTail(artist, song, coverImg, audioPreview, titleAlbum);
 
 	// 	arrFavoriteSongs.push(
 	// 		new SongsFavorite(artist, song, coverImg, audioPreview)
@@ -367,11 +382,25 @@ function playPausePlayer() {
 // al click del cuoricino, aggiunge in un array il brano selezionato
 // carica nella sezione html CODA il brano selezionato
 
-function addTracksTail(artist, song, coverImg, audioPreview) {
+function addTracksTail(artist, song, coverImg, audioPreview, titleAlbum) {
 	console.log("Avviata la addTracksTail");
 
+	let stringTitleAlbum = String(titleAlbum);
+	// indexOf();
+	// replace();
+	if (stringTitleAlbum.indexOf("'") !== -1) {
+		stringTitleAlbum.replace("'", " ");
+	}
+
+	console.log(stringTitleAlbum);
 	arrFavoriteSongs.push(
-		new SongsFavorite(artist, song, coverImg, audioPreview)
+		new SongsFavorite(
+			artist,
+			song,
+			coverImg,
+			audioPreview,
+			stringTitleAlbum
+		)
 	);
 
 	console.log(arrFavoriteSongs);
@@ -382,9 +411,90 @@ function addTracksTail(artist, song, coverImg, audioPreview) {
 }
 
 function showFavoriteSongs() {
-	let splashPage = document.querySelector("#splashPage");
+	let searchPage = document.querySelector("#searchPage");
 	let favoriteSongsPage = document.querySelector("#tracksTail");
+	let showTracks = document.querySelector("#show-tracks");
+	let numberSongs = 1;
 
-	splashPage.classList.toggle("d-none");
+	showTracks.innerHTML = "";
+
+	searchPage.classList.toggle("d-none");
 	favoriteSongsPage.classList.toggle("d-none");
+
+	console.log(arrFavoriteSongs);
+
+	arrFavoriteSongs.map((song) => {
+		console.log(song);
+
+		showTracks.innerHTML += `
+	          <div class="row-tracks">
+
+	            <div class="col">
+	              <div class="songs d-flex justify-content-left align-items-center">
+	                <div class="number-song">${numberSongs++}</div>
+	                <div class="favorite_cover-img">
+	                  <img class="tail-coverImg" src="${song.coverImg}" alt="">
+	                </div>
+	                <div class="favorite_artiste-title--txt">
+	                  <h3>${song.song}</h3>
+	                  <p class="txt-color-grey">${song.artist}</p>
+	                </div>
+	              </div>
+	            </div>
+
+	            <div class="col">
+	              <div class="heart_time">
+	                <p class="txt-color-grey">${song.titleAlbum}</p>
+	                <div class="hearts">
+	                  <i class="bi bi-heart-fill" id="heart-fill"></i>
+	                  <div class="time">2:53</div>
+	                </div>
+
+	              </div>
+	            </div>
+
+	          </div>
+		`;
+	});
+
+	//   <div class="row">
+	//     <div class="col">
+
+	//       <h2>Coda</h2>
+
+	//       <p class="txt-color-grey">Stai ascoltando</p>
+
+	//       <div class="row-tracks">
+
+	//         <div class="col">
+	//           <div class="songs d-flex justify-content-left align-items-center">
+	//             <div class="number-song">1</div>
+	//             <div class="favorite_cover-img">
+	//               <img class="tail-coverImg" src="./assets/img/logo-player.png" alt="">
+	//             </div>
+	//             <div class="favorite_artiste-title--txt">
+	//               <h3>Feeling This</h3>
+	//               <p class="txt-color-grey">blink-182</p>
+	//             </div>
+	//           </div>
+	//         </div>
+
+	//         <div class="col">
+	//           <div class="heart_time">
+	//             <p class="txt-color-grey">blink-182</p>
+	//             <div class="hearts">
+	//               <i class="bi bi-heart-fill" id="heart-fill"></i>
+	//               <div class="time">2:53</div>
+	//             </div>
+
+	//           </div>
+	//         </div>
+
+	//       </div>
+
+	//       <!-- <p class="txt-color-grey">Prossimi</p> -->
+
+	//     </div>
+
+	//   </div>
 }

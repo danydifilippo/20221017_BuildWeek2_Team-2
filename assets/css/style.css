@@ -11218,14 +11218,24 @@ body #tracksTail {
 }
 body .row-tracks {
   display: flex;
+  align-items: center;
 }
 body .songs {
   font-size: 1rem;
-  gap: 35px;
+  gap: 18px;
   margin-bottom: 1rem;
 }
 body .heart_time {
   display: flex;
+  justify-content: flex-end;
+  gap: 180px;
+}
+body .hearts {
+  display: flex;
+  gap: 20px;
+}
+body .hearts #heart-fill {
+  color: green;
 }
 body .tail-left-side {
   display: flex;
@@ -11241,4 +11251,7 @@ body .txt-color-grey {
 body .tail-coverImg {
   width: 45px;
   height: 47px;
+}
+body .favorite_artiste-title--txt {
+  padding-top: 16px;
 }
