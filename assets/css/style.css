@@ -11529,4 +11529,98 @@ i:hover {
   .right {
     display: none;
   }
+  #main .aside {
+    width: 20%;
+  }
+  #main #splashPage {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .resultCard {
+    width: 28% !important;
+    margin-bottom: 3%;
+    margin-inline: 2%;
+  }
+  .homeContainers {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .homeCard {
+    width: 45%;
+  }
+  .iconPlayer {
+    display: none;
+  }
+  #container_filler-bar {
+    width: 25%;
+  }
+  #filler-bar {
+    width: 254%;
+    text-align: center;
+  }
+  #title-song {
+    font-size: 1rem;
+  }
+  #sub-test_player {
+    font-size: 0.8rem;
+  }
+  #volume {
+    width: 40%;
+  }
+  #cardTitle {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 798px) {
+  #volume, #title-song, #sub-test_player {
+    display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .left {
+    display: none;
+  }
+  #main #splashPage {
+    width: 100%;
+  }
+  .homeCard {
+    width: 80%;
+  }
+  #controls_player {
+    font-size: 1.2rem;
+  }
+  .homeContainers {
+    width: 70%;
+    margin-inline: auto;
+  }
+  .resultCard {
+    width: 100% !important;
+  }
+  #container_filler-bar {
+    width: 30%;
+  }
+  #filler-bar {
+    width: 100%;
+  }
+  .pippo {
+    flex-direction: column;
+  }
+  #cover-player {
+    margin-right: 0;
+  }
+  #btn_volume-up {
+    display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  #cover-player {
+    width: 50px;
+    height: 50px;
+  }
+  .icons-play, #filler-bar, .bi-pc-display-horizontal {
+    display: none;
+  }
 }
