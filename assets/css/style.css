@@ -10856,6 +10856,49 @@ body {
   background-color: rgba(47, 127, 0, 0);
 }
 
+#headArtist {
+  height: 45vh;
+  background-position: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+
+#about {
+  height: 45vh;
+  background-position: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+
+#profilePic {
+  width: 24px;
+}
+
+#profileInfo {
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.5882352941);
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 3px;
+}
+
+#artistPageTitle {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
 #hero {
   background-color: transparent;
 }
@@ -10900,7 +10943,7 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.5882352941);
   position: relative;
   margin-inline: 1%;
 }
@@ -10938,6 +10981,19 @@ body {
 #artists .btn_audio-preview,
 #albums .btn_audio-preview {
   display: inline-flex;
+}
+
+#followBtn {
+  background-color: transparent;
+  border-radius: 5px;
+  width: 90px;
+  height: 35px;
+  color: #ffffff;
+  border: 1px solid white;
+}
+
+#artistSongs tr:hover {
+  background: rgba(28, 28, 28, 0.3215686275);
 }
 
 .headings {
@@ -10999,6 +11055,20 @@ body {
   bottom: 14px;
   right: 10px;
   opacity: 0;
+  background-color: #3fcd52;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #000000;
+}
+
+.artistPreview {
+  opacity: 1;
   background-color: #3fcd52;
   height: 50px;
   width: 50px;

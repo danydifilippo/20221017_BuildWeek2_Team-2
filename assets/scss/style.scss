@@ -85,8 +85,44 @@ body {
 	align-items: center;
 	background-color: #2f7f0000;
 }
-
-    
+#headArtist {
+	height: 45vh;
+	background-position:cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding-left: 5%;
+	padding-bottom: 1%;
+}
+#about {
+	height: 45vh;
+	background-position:cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding-left: 5%;
+	padding-bottom: 1%;
+}
+ #profilePic {
+	width: 24px;
+ } 
+ #profileInfo {
+	width: 120px;
+	background-color: #00000096;
+	justify-content: space-between;
+	border-radius: 25px;
+	padding: 3px;
+ }
+#artistPageTitle {
+	font-size: 5rem;
+	font-weight: bold;
+}
 
 
 #hero {
@@ -99,11 +135,7 @@ body {
 #cardTitle:hover {
      text-decoration: underline;	
 }
-.ellipsis {
-	
-	
-	
-}
+
 .heroBtnGreen {
 	background-color: #2f7f00;
 	border: none;
@@ -134,7 +166,7 @@ body {
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
-	background-color: #000000;
+	background-color: #00000096;
 	position: relative;
 	margin-inline: 1%;
 }
@@ -167,6 +199,18 @@ body {
 		// background-color: green;
 		display: inline-flex;
 	}
+}
+#followBtn {
+	background-color: transparent;
+	border-radius: 5px;
+	width: 90px;
+	height: 35px;
+	color: #ffffff;
+	border: 1px solid white;
+   
+}
+ #artistSongs tr:hover {
+      background: #1c1c1c52;
 }
 .headings {
 	padding-top: 30px;
@@ -220,6 +264,20 @@ body {
 	bottom: 14px;
 	right: 10px;
 	opacity: 0;
+	background-color: #3fcd52;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: #000000;
+}
+.artistPreview {
+	
+	opacity: 1;
 	background-color: #3fcd52;
 	height: 50px;
 	width: 50px;

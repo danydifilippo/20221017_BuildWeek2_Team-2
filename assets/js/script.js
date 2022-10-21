@@ -90,11 +90,11 @@ async function returnApi(newA) {
     showArtist.style.backgroundImage = `url(${artista[i].artist.picture_xl})`;
     showArtist.innerHTML = `
     <p><img src="./assets/img/artist-verified-png.png" alt="" width="50px"><span>Verified artist</span></p>
-    <h1>${artista[i].artist.name}</h1> 
-    <p>18,375,540 monthly listener</p>`;
+    <h1 id="artistPageTitle">${artista[i].artist.name}</h1> 
+    <p class="fs-6 mt-5">18,375,540 monthly listener</p>`;
     let follow = document.getElementById("follow");
     follow.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${artista[i].preview}')">
-    <button>Follow</button>`;
+    <button id="followBtn">Follow</button>`;
     let showSongs = document.getElementById("artistSongs");
     for (let i = 1; i < 6; i++) {
       let mn = Number(Math.floor(Math.random() * 3 + 3));
@@ -115,7 +115,9 @@ async function returnApi(newA) {
       showDisco.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">
     <div class="position-relative">
     <img src="${artista[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${artista[i].artist.name}')">  
-        <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${artista[i].preview}')">
+        <div class="position-absolute preview" onclick="playA('${artista[i].preview}')">
+        <i class="bi bi-play-fill"></i>
+        </div>
     </div>
     <div class="card-body">
     <h5 class="card-title text-white">${artista[i].album.title}</h5>
@@ -123,13 +125,13 @@ async function returnApi(newA) {
     </div>`;
     }
     let showFeat = document.getElementById("feature");
-    showFeat.innerHTML += `<h2>Featuring ${artista[i].artist.name}</h2>`;
+    showFeat.innerHTML += `<h2 class="px-1 mb-4 mt-4 fs-4 fw-bold">Featuring ${artista[i].artist.name}</h2>`;
 
     let showAbout = document.getElementById("about");
     showAbout.style.backgroundImage = `url(${artista[i].artist.picture_big})`;
     showAbout.innerHTML += `<div>
-    <h5 class="card-title text-white">18,375,540 monthly listener</h5>
-    <p>Throughout ${artista[i].artist.name}'s career, vocalist/guitarist's notorious public image has overshadowed her band's music. 
+    <h5 class="card-title text-white px-1 mb-4 fs-4 fw-bold">18,375,540 monthly listener</h5>
+    <p class="fs-6">Throughout ${artista[i].artist.name}'s career, vocalist/guitarist's notorious public image has overshadowed her band's music. 
     In their original incarnation, Hole was one of the noisiest, most abrasive alternative bands performing in the early '90s.</p>
     </div>`;
   }
