@@ -41,6 +41,8 @@ async function showApi(n) {
     document.getElementById("search").addEventListener("click", () => {
       let onSearchPage = document.getElementById("searchPage");
       onSearchPage.classList.remove("d-none");
+      let homep = document.querySelector("#Homepage")
+      homep.classList.add("d-none")
     });
 
     let showcard = document.getElementById("artists");
