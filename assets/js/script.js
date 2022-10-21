@@ -457,3 +457,6 @@ function showFavoriteSongs() {
 		`;
 	});
 }
+
+// setStartFillerBar(previewAudio);
+// setNameArtistSong(artist, song, coverImg, audioPreview, titleAlbum);
