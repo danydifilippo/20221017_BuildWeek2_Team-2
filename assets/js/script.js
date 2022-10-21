@@ -147,16 +147,16 @@ async function returnAlbumApi(newA) {
     let onPageAlbum = document.getElementById("albumPage");
     onPageAlbum.classList.remove("d-none");
     document.getElementById("searchPage").classList.add("d-none");
-    document.getElementById("HomePage").classList.add("d-none");
+    document.getElementById("Homepage").classList.add("d-none");
     document.getElementById("artistPage").classList.add("d-none");
     let anno = Number(Math.floor(Math.random() * 20 + 2000));
     let showAlbum = document.getElementById("headAlbum");
-    showAlbum.innerHTML = `<div><p><img src="${album[i].album.cover.medium}" alt="Album"></p></div>
-  <div><h1>${artista[i].artist.name}</h1>
+    showAlbum.innerHTML = `<div><p><img src="${album[i].album.cover_medium}" alt="Album"></p></div>
+  <div><h1>${album[i].artist.name}</h1>
   <p><img src="${album[i].artist.picture_small}" alt="Artista"> ${album[i].artist.name} &#183; ${anno} &#183; 24 songs,<span id="text-gray">49 min 15 sec</span></p></div>`;
     let listen = document.getElementById("listen");
     listen.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${album[1].preview}')">
-  <img src="../img/heart_spotify.png" alt="heart">`;
+    <img src="./assets/img/heart_spotify.png" width="40px" alt="heart" class="text-white">`;
     let songsList = document.getElementById("songsList");
     for (let i = 1; i < album.length; i++) {
       let mn = Number(Math.floor(Math.random() * 3 + 3));
