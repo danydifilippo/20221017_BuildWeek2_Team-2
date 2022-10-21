@@ -8,44 +8,48 @@ async function showApi(n) {
   i = Number(Math.floor(Math.random() * 25));
 
   // Homepage
-    
-  let hero = document.getElementById('imgHero')
-  hero.innerHTML = `<img src="${music[i].album.cover_medium}" class="img-fluid rounded-start" alt="cover">`
-  let cardtitle = document.getElementById('cardTitle')
-  cardtitle.innerHTML = `${music[i].album.title}`
-  let cardArtist = document.getElementById('cardArtist')
-  cardArtist.innerHTML = `${music[i].artist.name}`
-  let cardtext = document.getElementById('cardtext')
-  cardtext.innerHTML = `${music[i].artist.name}`
-  let playSaveBtn = document.getElementById('playSaveBtn')
-  playSaveBtn.innerHTML = `<button onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">Play</button>
-  <button onclick="albumPage('${music[i].artist.name}')">Save</button>`
-  let row1 = document.getElementById('rows')
-  row1.innerHTML +=`<div class="card mb-3"">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="${music[i].album.cover_small}" class="img-fluid rounded-start" alt="cover small">
+
+  let hero = document.getElementById("imgHero");
+  hero.innerHTML = `<img src="${music[i].album.cover_medium}" class="img-fluid rounded-start" alt="cover">`;
+  let cardtitle = document.getElementById("cardTitle");
+  cardtitle.innerHTML = `${music[i].album.title}`;
+  let cardArtist = document.getElementById("cardArtist");
+  cardArtist.innerHTML = `${music[i].artist.name}`;
+  let cardtext = document.getElementById("cardtext");
+  cardtext.innerHTML = `${music[i].artist.name}`;
+  let playSaveBtn = document.getElementById("playSaveBtn");
+  playSaveBtn.innerHTML = `<button class="heroBtnGreen me-3" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">Play</button>
+  <button class="heroBtnTran" onclick="albumPage('${music[i].artist.name}')">Save</button>`;
+  let row1 = document.getElementById("rows");
+  row1.innerHTML += `<div class="card mb-3 homeCard">
+  <div class="cardContent">
+    <div>
+      <img src="${music[i].album.cover_small}" class="w-100 rounded-start homeImg" alt="cover small">
+      <div class=" position-absolute homePreview" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist}')">
+      <i class="bi bi-play-fill"></i>
+       </div>
     </div>
-    <div class="col-md-8">
+    <div class="cardTitle">
       <div class="card-body">
-        <h3 class="card-title">${music[i].artist.name}</h3>
+        <p class="card-title cardText">${music[i].artist.name}</p>
       </div>
   </div>
-</div>`
+</div>`;
 
-// searchPage
-function SearchPage(){
-  document.getElementById("search").addEventListener('click', () =>{
-    let onSearchPage = document.getElementById("searchPage");
-    onSearchPage.classList.remove("d-none")
-  })
-    
+  // searchPage
+  function SearchPage() {
+    document.getElementById("search").addEventListener("click", () => {
+      let onSearchPage = document.getElementById("searchPage");
+      onSearchPage.classList.remove("d-none");
+    });
 
     let showcard = document.getElementById("artists");
     showcard.innerHTML += `<div  class="card border-0 resultCard">
             <div class="position-relative">
             <img src="${music[i].artist.picture_medium}" class="card-img-top rounded-circle" alt="artista" onclick="artistPage('${music[i].artist.name}')">
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+            <div class="position-absolute preview" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist.name}', '${music[i].title}', '${music[i].album.cover_medium}'); getAudioObj('${music[i].preview}')">
+            <i class="bi bi-play-fill"></i>
+            </div>
             </div>
             <div class="card-body">
             <h5 class="card-title text-white">${music[i].artist.name}</h5>
@@ -56,17 +60,18 @@ function SearchPage(){
 
     showAlbum.innerHTML += `<div class="card border-0 bg-dark resultCard">
         <div class="position-relative">
-        <img src="${music[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${music[i].artist.name}')>  
-            <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist}')">
+        <img src="${music[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${music[i].artist.name}')">  
+            <div class=" position-absolute preview" onclick="playA('${music[i].preview}'); setNameArtistSong('${music[i].artist}')">
+            <i class="bi bi-play-fill"></i>
+            </div>
         </div>
         <div class="card-body">
         <h5 class="card-title text-white">${music[i].album.title}</h5>
         <p>${music[i].artist.name}</p>
         </div>`;
-
-      }
-      SearchPage()
-      }
+  }
+  SearchPage();
+}
 
 //fetch di un unico artista per funzioni su pagine specifiche
 async function returnApi(newA) {
@@ -82,7 +87,7 @@ async function returnApi(newA) {
     document.getElementById("albumPage").classList.add("d-none");
     document.getElementById("HomePage").classList.add("d-none");
     let showArtist = document.getElementById("headArtist");
-    showArtist.style.backgroundImage=`url(${artista[i].artist.picture_xl})`
+    showArtist.style.backgroundImage = `url(${artista[i].artist.picture_xl})`;
     showArtist.innerHTML = `
     <p><img src="./assets/img/artist-verified-png.png" alt="" width="50px"><span>Verified artist</span></p>
     <h1>${artista[i].artist.name}</h1> 
@@ -119,9 +124,9 @@ async function returnApi(newA) {
     }
     let showFeat = document.getElementById("feature");
     showFeat.innerHTML += `<h2>Featuring ${artista[i].artist.name}</h2>`;
- 
+
     let showAbout = document.getElementById("about");
-    showAbout.style.backgroundImage = `url(${artista[i].artist.picture_big})`
+    showAbout.style.backgroundImage = `url(${artista[i].artist.picture_big})`;
     showAbout.innerHTML += `<div>
     <h5 class="card-title text-white">18,375,540 monthly listener</h5>
     <p>Throughout ${artista[i].artist.name}'s career, vocalist/guitarist's notorious public image has overshadowed her band's music. 
@@ -131,7 +136,6 @@ async function returnApi(newA) {
   fillArtistPage();
 }
 
-
 //fetch di un unico album per funzioni su pagine specifiche
 async function returnAlbumApi(newA) {
   let albumLink = await fetch(newA);
@@ -139,37 +143,37 @@ async function returnAlbumApi(newA) {
   let album = responsText.data;
   console.log(album);
 
-function fillAlbumPage() {
-  let onPageAlbum = document.getElementById("albumPage");
-  onPageAlbum.classList.remove("d-none");
-  document.getElementById("searchPage").classList.add("d-none");
-  document.getElementById("HomePage").classList.add("d-none");
-  document.getElementById("artistPage").classList.add("d-none");
-  let anno = Number(Math.floor(Math.random() * 20 + 2000));
-  let showAlbum = document.getElementById("headAlbum");
-  showAlbum.innerHTML = `<div><p><img src="${album[i].album.cover.medium}" alt="Album"></p></div>
+  function fillAlbumPage() {
+    let onPageAlbum = document.getElementById("albumPage");
+    onPageAlbum.classList.remove("d-none");
+    document.getElementById("searchPage").classList.add("d-none");
+    document.getElementById("HomePage").classList.add("d-none");
+    document.getElementById("artistPage").classList.add("d-none");
+    let anno = Number(Math.floor(Math.random() * 20 + 2000));
+    let showAlbum = document.getElementById("headAlbum");
+    showAlbum.innerHTML = `<div><p><img src="${album[i].album.cover.medium}" alt="Album"></p></div>
   <div><h1>${artista[i].artist.name}</h1>
   <p><img src="${album[i].artist.picture_small}" alt="Artista"> ${album[i].artist.name} &#183; ${anno} &#183; 24 songs,<span id="text-gray">49 min 15 sec</span></p></div>`;
-  let listen = document.getElementById("listen");
-  listen.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${album[1].preview}')">
+    let listen = document.getElementById("listen");
+    listen.innerHTML += `<p><img class="w-25 position-absolute preview" src="" alt="" onclick="playA('${album[1].preview}')">
   <img src="../img/heart_spotify.png" alt="heart">`;
-  let songsList = document.getElementById("songsList");
-  for (let i = 1; i < album.length; i++) {
-    let mn = Number(Math.floor(Math.random() * 3 + 3));
-    let sc = Number(Math.floor(Math.random() * 5));
-    let s = Number(Math.floor(Math.random() * 9));
-    songsList.innerHTML += `<tr>
+    let songsList = document.getElementById("songsList");
+    for (let i = 1; i < album.length; i++) {
+      let mn = Number(Math.floor(Math.random() * 3 + 3));
+      let sc = Number(Math.floor(Math.random() * 5));
+      let s = Number(Math.floor(Math.random() * 9));
+      songsList.innerHTML += `<tr>
     <th scope="row" onclick="playA('${album[i].preview}')">${[i]}</th>
     <td><p>${album[i].title}</p>
     <p>${album[i].artist.name}</p></td>
     <td>${mn}:${sc}${s}</td>
   </tr>`;
-  }
-  let more = document.getElementById("moreAlbum");
-  more.innerHTML += `<h2>More by ${album[i].artist.name}</h2>`;
-  for (let i = 0; i < 5; i++) {
-    let anno = Number(Math.floor(Math.random() * 20 + 2000));
-    more.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">
+    }
+    let more = document.getElementById("moreAlbum");
+    more.innerHTML += `<h2>More by ${album[i].artist.name}</h2>`;
+    for (let i = 0; i < 5; i++) {
+      let anno = Number(Math.floor(Math.random() * 20 + 2000));
+      more.innerHTML += `<div class="card border-0 bg-dark resultCard p-3">
   <div class="position-relative">
   <img src="${album[i].album.cover_medium}" class="card-img-top" alt="album" onclick="albumPage('${album[i].artist.name}')">  
       <img class="w-25 position-absolute preview" src="./assets/img/play-button.png" alt="" onclick="playA('${artista[i].preview}')">
@@ -178,11 +182,9 @@ function fillAlbumPage() {
   <h5 class="card-title text-white">${album[i].album.title}</h5>
   <p>${anno}</p>
   </div>`;
+    }
   }
-
-
-}
-fillAlbumPage();
+  fillAlbumPage();
 }
 
 //creazione pagina Artista
@@ -201,7 +203,7 @@ function albumPage(b) {
   if (b === "Måneskin") {
     b = "Maneskin";
   }
-  let newUrl4 =  `https://striveschool-api.herokuapp.com/api/deezer/search?q=${b}`;
+  let newUrl4 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${b}`;
   album = returnAlbumApi(newUrl4);
   console.log(album);
   fillAlbumPage();
@@ -228,20 +230,19 @@ const urlBase = "q=radiohead";
 
 function searchArtist(eventObject) {
   console.log(eventObject);
-  if(eventObject.which == 13 || eventObject.keyCode == 13) {
+  if (eventObject.which == 13 || eventObject.keyCode == 13) {
     eventObject.preventDefault();
     let params = new URLSearchParams(urlBase);
     let query = params.get("q");
     let input = searchBar.value;
-  console.log(query);
-  params.set("q", input);
-  let data = params.toString();
-  let newUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?${data}`;
-  console.log(newUrl);
-  showApi(newUrl);
+    console.log(query);
+    params.set("q", input);
+    let data = params.toString();
+    let newUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?${data}`;
+    console.log(newUrl);
+    showApi(newUrl);
+  }
 }
-}
-
 
 // array artisti di default
 let arrayArtists = ["Radiohead", "Lizzo", "Maneskin", "Night Skinny", "Nirvana"];

@@ -29,7 +29,10 @@ body {
 	#splashPage {
 		width: 66%;
 		overflow-y: scroll;
-		height: 100vh;
+		height: 100%;
+		background-image: linear-gradient(0deg, #121212 43%, #95282d 90%);
+		
+		
 	}
 	ul {
 		list-style: none;
@@ -76,7 +79,51 @@ body {
 	left: 10px;
 	font-size: 1.2rem;
 }
+#headDiv {
+	height: 60px;
+	align-items: center;
+	background-color: #2f7f0000;
+}
 
+    
+
+
+#hero {
+	background-color: transparent;
+    	
+}
+#cardTitle {
+	font-size: 4rem;
+}
+#cardTitle:hover {
+     text-decoration: underline;	
+}
+.heroBtnGreen {
+	background-color: #2f7f00;
+	border: none;
+	color: black;
+	font-weight: bold;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 25px;
+  }
+  .heroBtnTran {
+	background-color:transparent;
+	border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+	font-weight: bold;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 25px;
+  }
 .arrow {
 	width: 35px;
 	height: 35px;
@@ -138,6 +185,7 @@ body {
 .resultCard {
 	width: 18% !important;
 	min-width: 180px;
+	background-color: #1c1c1c;
 }
 .categoriesCard {
 	margin-right: 2%;
@@ -149,7 +197,109 @@ body {
 }
 .preview {
 	bottom: 3px;
-	right: 13px;
+	right: 10px;
+	opacity: 0;
+	background-color: #3fcd52;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: #000000;
+}
+.homePreview {
+	bottom: 14px;
+	right: 10px;
+	opacity: 0;
+	background-color: #3fcd52;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: #000000;
+}
+@keyframes animation {
+	0% {
+		opacity: 0;
+		bottom: -7px;
+	}
+	100% {
+		opacity: 1;
+		bottom: 3px;
+	}
+
+}
+@keyframes homeAnimation {
+	0% {
+		opacity: 0;
+		bottom: 7px;
+	}
+	100% {
+		opacity: 1;
+		bottom: 14px;
+	}
+
+}
+#blocker {
+	height: 120px;
+}
+#banner {
+	background-color: #1c1c1c91;
+	width: 93%;
+	margin-inline: auto;
+}
+.homeCard {
+	width:30%;
+	height: 80px;
+	background-color: #1c1c1c91;
+
+	
+}
+.cardContent {
+	display: flex;
+	height: 100%;
+	flex-direction: row;
+	
+}
+#rows {
+	margin-inline: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 96%;
+	justify-content: space-around;
+
+} 
+.card-title {
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: bold;
+
+}  
+.cardText {
+	margin-bottom: 0;
+}
+.cardTitle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.homeImg {
+	height: 98%;
+}
+.resultCard:hover .position-relative .preview {
+	animation: animation 0.4s linear 1 both;
+}
+.homeCard:hover .cardContent .homePreview {
+	animation: homeAnimation 0.4s linear 1 both;
 }
 h3 {
 	font-size: 1rem;
@@ -443,6 +593,9 @@ i:hover {
 
 .homeContainers {
 	display: flex;
+	justify-content: space-around;
+	width: 95%;
+	margin-inline: auto;
 }
 
 #watch{
