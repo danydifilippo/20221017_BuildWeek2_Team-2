@@ -10799,8 +10799,15 @@ body {
 #main .aside {
   width: 17%;
 }
+#main .aside #search {
+  font-size: 1em;
+  cursor: pointer;
+}
 #main .aside p {
   color: #a6a6a6;
+}
+#main .aside li a:hover, #main .aside li p:hover {
+  color: white;
 }
 #main #splashPage {
   width: 66%;
@@ -10926,6 +10933,7 @@ body {
 
 #albumCover {
   width: 100%;
+  min-width: 160px;
   box-shadow: 5px 5px 15px 5px rgba(9, 9, 9, 0.5843137255);
 }
 
@@ -11504,8 +11512,7 @@ i:hover {
 #artistMain th {
   text-align: center;
 }
-#artistMain #discography {
-  display: flex;
+#artistMain #discography, #artistMain .feature {
   gap: 20px;
 }
 
@@ -11542,7 +11549,7 @@ i:hover {
     margin-bottom: 3%;
     margin-inline: 2%;
   }
-  .homeContainers {
+  .homeContainers, #discography, .feature {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
@@ -11573,6 +11580,9 @@ i:hover {
   #cardTitle {
     font-size: 2rem;
   }
+  #albumTitle {
+    font-size: 3rem;
+  }
 }
 @media screen and (max-width: 798px) {
   #volume, #title-song, #sub-test_player {
@@ -11592,7 +11602,7 @@ i:hover {
   #controls_player {
     font-size: 1.2rem;
   }
-  .homeContainers {
+  .homeContainers, #discography, .feature {
     width: 70%;
     margin-inline: auto;
   }
@@ -11605,7 +11615,7 @@ i:hover {
   #filler-bar {
     width: 100%;
   }
-  .pippo {
+  .pippo, #headAlbum {
     flex-direction: column;
   }
   #cover-player {

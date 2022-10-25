@@ -23,8 +23,15 @@ body {
 	}
 	.aside {
 		width: 17%;
+		#search {
+			font-size: 1em;
+			cursor: pointer;
+		}
 		p {
 			color: #a6a6a6;
+		}
+		li a:hover, li p:hover{
+			color: white;
 		}
 	}
 	#splashPage {
@@ -145,6 +152,7 @@ justify-content: flex-start;
 }
 #albumCover {
 	width: 100%;
+	min-width: 160px;
 	box-shadow: 5px 5px 15px 5px #09090995;
 }
 #moreAlbum {
@@ -162,7 +170,7 @@ justify-content: flex-start;
 	background-color: transparent;
     	
 }
-#cardTitle {
+#cardTitle{
 	font-size: 4rem;
 }
 #cardTitle:hover {
@@ -723,8 +731,7 @@ i:hover {
 		th {
 			text-align: center;
 		}
-		#discography {
-			display: flex;
+		#discography, .feature {
 			gap: 20px;
 		}
 	}
@@ -763,7 +770,7 @@ i:hover {
 		margin-bottom: 3%;
 		margin-inline: 2%;
 	}
-	.homeContainers {
+	.homeContainers, #discography, .feature {
 		justify-content: flex-start;
 		flex-wrap: wrap;
 	}
@@ -792,8 +799,11 @@ i:hover {
 	#volume {
 		width: 40%;
 	}
-	#cardTitle {
+	#cardTitle{
 		font-size: 2rem;
+	}
+	#albumTitle  {
+		font-size: 3rem;
 	}
 
 }
@@ -817,7 +827,7 @@ i:hover {
 		#controls_player {
 			font-size: 1.2rem;
 		}
-		.homeContainers {
+		.homeContainers, #discography, .feature {
 			width: 70%;
 			margin-inline: auto;
 		}
@@ -830,7 +840,7 @@ i:hover {
 		#filler-bar{
 			width: 100%;
 		}
-		.pippo {
+		.pippo, #headAlbum {
 			flex-direction: column;
 		}
 		#cover-player {

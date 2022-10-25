@@ -155,7 +155,7 @@ async function returnAlbumApi(newA) {
     document.getElementById("artistPage").classList.add("d-none");
     let anno = Number(Math.floor(Math.random() * 20 + 2000));
     let showAlbum = document.getElementById("headAlbum");
-    showAlbum.innerHTML = `<div id="coverContainer"><img id="albumCover" src="${album[i].album.cover_medium}" alt="Album"></div>
+    showAlbum.innerHTML = `<div id="coverContainer"><img id="albumCover" src="${album[i].album.cover_medium}" alt="Album" class="img-fluid"></div>
   <div id="albumContent" class="ms-4"><h1 id="albumTitle">${album[i].artist.name}</h1>
   <p><img class="rounded-circle coverArtist me-2" src="${album[i].artist.picture_small}" alt="Artista"><span class="fw-bold"> ${album[i].artist.name}</span> &#183; ${anno} &#183; 24 songs,<span id="text-gray">49 min 15 sec</span></p></div>`;
     let listen = document.getElementById("listen");
